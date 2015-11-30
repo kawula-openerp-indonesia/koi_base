@@ -1,0 +1,81 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* ar_base_identitas
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20130823-231028\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-29 03:27+0000\n"
+"PO-Revision-Date: 2013-08-29 03:27+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ar_base_identitas
+#: view:base.golongan_darah:0
+#: field:base.golongan_darah,name:0
+#: model:ir.actions.act_window,name:ar_base_identitas.waction_base_golonganDarah
+#: model:ir.model,name:ar_base_identitas.model_base_golongan_darah
+msgid "Golongan Darah"
+msgstr "Golongan Darah"
+
+#. module: ar_base_identitas
+#: view:base.etnis:0
+#: field:base.etnis,name:0
+#: model:ir.actions.act_window,name:ar_base_identitas.waction_base_etnis
+#: model:ir.model,name:ar_base_identitas.model_base_etnis
+msgid "Etnis"
+msgstr "Etnis"
+
+#. module: ar_base_identitas
+#: field:base.agama,kode:0
+#: view:base.etnis:0
+#: field:base.etnis,kode:0
+#: view:base.golongan_darah:0
+#: field:base.golongan_darah,kode:0
+#: field:base.jenis_kelamin,kode:0
+#: field:base.status_pekerjaan,kode:0
+#: field:base.status_pernikahan,kode:0
+msgid "Kode"
+msgstr "Kode"
+
+#. module: ar_base_identitas
+#: view:base.jenis_kelamin:0
+#: field:base.jenis_kelamin,name:0
+#: model:ir.actions.act_window,name:ar_base_identitas.waction_base_jenisKelamin
+#: model:ir.model,name:ar_base_identitas.model_base_jenis_kelamin
+msgid "Jenis Kelamin"
+msgstr "Jenis Kelamin"
+
+#. module: ar_base_identitas
+#: view:base.status_pekerjaan:0
+#: field:base.status_pekerjaan,name:0
+#: model:ir.actions.act_window,name:ar_base_identitas.waction_base_statusPekerjaan
+#: model:ir.model,name:ar_base_identitas.model_base_status_pekerjaan
+msgid "Status Pekerjaan"
+msgstr "Status Pekerjaan"
+
+#. module: ar_base_identitas
+#: view:base.agama:0
+#: field:base.agama,name:0
+#: model:ir.actions.act_window,name:ar_base_identitas.waction_base_agama
+#: model:ir.model,name:ar_base_identitas.model_base_agama
+msgid "Agama"
+msgstr "Agama"
+
+#. module: ar_base_identitas
+#: view:base.status_pernikahan:0
+#: field:base.status_pernikahan,name:0
+#: model:ir.actions.act_window,name:ar_base_identitas.waction_base_statusPernikahan
+msgid "Status Perkawinan"
+msgstr "Status Perkawinan"
+
+#. module: ar_base_identitas
+#: model:ir.model,name:ar_base_identitas.model_base_status_pernikahan
+msgid "Status Pernikahan"
+msgstr "Status Pernikahan"
+

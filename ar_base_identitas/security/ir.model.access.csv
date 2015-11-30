@@ -1,0 +1,12 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"data_accessRight_baseAgama","data_accessRight_baseAgama","model_base_agama",,1,1,1,1
+"data_accessRight_baseEtnis","data_accessRight_baseEtnis","model_base_etnis",,1,1,1,1
+"data_accessRight_baseGolonganDarah","data_accessRight_baseGolonganDarah","model_base_golongan_darah",,1,1,1,1
+"data_accessRight_baseJenisKelamin","data_accessRight_baseJenisKelamin","model_base_jenis_kelamin",,1,1,1,1
+"data_accessRight_baseStatusPekerjaan","data_accessRight_baseStatusPekerjaan","model_base_status_pekerjaan",,1,1,1,1
+"data_accessRight_baseStatusPernikahan","data_accessRight_baseStatusPernikahan","model_base_status_pernikahan",,1,1,1,1
+
+
+
+
+

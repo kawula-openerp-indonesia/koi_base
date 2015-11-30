@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="data_statusPernikahan_menikah" model="base.status_pernikahan">
+			<field name="kode">ST-1</field>
+			<field name="name">Menikah</field>
+		</record>
+
+		<record id="data_statusPernikahan_belumMenikah" model="base.status_pernikahan">
+			<field name="kode">ST-2</field>
+			<field name="name">Belum Menikah</field>
+		</record>
+		
+		<record id="data_statusPernikahan_dudaJanda" model="base.status_pernikahan">
+			<field name="kode">ST-3</field>
+			<field name="name">Duda/Janda</field>
+		</record>
+				
+	</data>
+</openerp>

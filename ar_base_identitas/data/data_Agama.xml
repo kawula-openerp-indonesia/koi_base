@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="data_agama_islam" model="base.agama">
+			<field name="kode">I</field>
+			<field name="name">Islam</field>
+		</record>
+		
+		<record id="data_agama_katolik" model="base.agama">
+			<field name="kode">K</field>
+			<field name="name">Katolik</field>
+		</record>
+		
+		<record id="data_agama_protestan" model="base.agama">
+			<field name="kode">P</field>
+			<field name="name">Protestan</field>
+		</record>				
+		
+		<record id="data_agama_hindu" model="base.agama">
+			<field name="kode">H</field>
+			<field name="name">Hindu</field>
+		</record>		
+		
+		<record id="data_agama_budha" model="base.agama">
+			<field name="kode">B</field>
+			<field name="name">Budha</field>
+		</record>		
+
+
+	</data>
+</openerp>
