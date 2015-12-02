@@ -26,13 +26,15 @@ def string2date(string_tanggal):
     bulan = int(string_tanggal[5:7])
     tahun = int(string_tanggal[0:4])
     return date(tahun, bulan, tanggal)
-    
+
+
 def cari_tanggal(tanggal, skip):
     a = string2date(tanggal)
     b = a.toordinal() + skip
     c = date.fromordinal(b)
     return c.strftime('%Y-%m-%d')
- 
+
+
 def jumlah_hari(bulan, tahun):
     if bulan in [1, 3, 5, 7, 8, 10, 12]:
         return 31
@@ -43,12 +45,14 @@ def jumlah_hari(bulan, tahun):
             return 29
         else:
             return 28
-            
+
+
 def bulan_selanjutnya(bulan, tahun, skip):
     if bulan + skip > 12:
         return [12 - bulan + skip, tahun+1]
     else:
         return [bulan + skip, tahun]
+
 
 def cek_tanggal_valid(bulan, tahun, tanggal):
     hari = jumlah_hari(bulan, tahun)
@@ -58,11 +62,12 @@ def cek_tanggal_valid(bulan, tahun, tanggal):
     else:
         return tanggal
 
+
 def cari_tanggal_selanjutnya(string_tanggal, skip_tanggal, skip_bulan):
     bulan = int(string_tanggal[5:7])
     tahun = int(string_tanggal[0:4])
- 
+
     bulan1, tahun1 = bulan_selanjutnya(bulan, tahun, skip_bulan)
     tanggal1 = cek_tanggal_valid(bulan1, tahun1, skip_tanggal)
-    a =  date(tahun1, bulan1, tanggal1)
+    a = date(tahun1, bulan1, tanggal1)
     return a.strftime('%Y-%m-%d')

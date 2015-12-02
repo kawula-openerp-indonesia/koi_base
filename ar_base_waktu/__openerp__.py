@@ -28,7 +28,7 @@
     -
     """,
     'images': [],
-    'update_xml': [ 
+    'update_xml': [
         'security/ir.model.access.csv',
         'data/data_Bulan.xml',
         'data/data_Hari.xml',
