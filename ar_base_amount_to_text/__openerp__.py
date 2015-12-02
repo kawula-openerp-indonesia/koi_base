@@ -29,7 +29,7 @@
     'images': [],
     'depends': ['base'],
     'data': [
-        'view/view_ResCurrency.xml',
+        'views/view_ResCurrency.xml',
         ],
     'installable': True,
     'auto_install': False,

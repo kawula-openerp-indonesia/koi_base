@@ -42,7 +42,7 @@ class res_currency(osv.osv):
             try:
                 f = getattr(obj_currency, currency.fungsi_terbilang, None)
             except Exception, e:
-                raise osv.except_osv(_('Error !'), _('%s') % e )
+                raise osv.except_osv(_('Error !'), _('%s') % e)
             else:
                 hasil = f(cr, uid, nilai)
 
@@ -59,22 +59,25 @@ class res_currency(osv.osv):
             }
 
         return val
-                
+
     def terbilang_indo(self, cr, uid, n):
         def terbilang_indo_child(n):
             nw = ''
             if n > 0:
-                ones = ["", "Satu ", "Dua ", "Tiga ",
+                ones = [
+                    "", "Satu ", "Dua ", "Tiga ",
                     "Empat ", "Lima ", "Enam ", "Tujuh ", "Delapan ",
                     "Sembilan "]
-                tens = ["Sepuluh ", "Sebelas ", "Dua Belas ",
+                tens = [
+                    "Sepuluh ", "Sebelas ", "Dua Belas ",
                     "Tiga Belas ", "Empat Belas ", "Lima Belas ",
                     "Enam Belas ", "Tujuh Belas ", "Delapan Belas ",
                     "Sembilan Belas "]
-                twenties = ["", "", "Dua Puluh ", "Tiga Puluh ",
+                twenties = [
+                    "", "", "Dua Puluh ", "Tiga Puluh ",
                     "Empat Puluh ", "Lima Puluh ", "Enam Puluh ",
                     "Tujuh Puluh ", "Delapan Puluh ", "Sembilan Puluh "]
-                thousands = ["","Ribu ","Juta ", "Milyar "]
+                thousands = ["", "Ribu ", "Juta ", "Milyar "]
 
                 n3 = []
 
@@ -137,21 +140,26 @@ class res_currency(osv.osv):
         def terbilang_eng_child(n):
             nw = ''
             if n > 0:
-                ones = ["", "one ", "two ", "three ", "four ",
-                    "five ","six ","seven ","eight ","nine "]
-                tens = ["ten ", "eleven ", "twelve ", "thirteen ",
+                ones = [
+                    "", "one ", "two ", "three ", "four ",
+                    "five ", "six ", "seven ", "eight ", "nine "]
+                tens = [
+                    "ten ", "eleven ", "twelve ", "thirteen ",
                     "fourteen ", "fifteen ", "sixteen ",
                     "seventeen ", "eighteen ", "nineteen "]
-                twenties = ["", "", "twenty ", "thirty ", "forty ",
+                twenties = [
+                    "", "", "twenty ", "thirty ", "forty ",
                     "fifty ", "sixty ", "seventy ", "eighty ",
                     "ninety "]
-                thousands = ["", "thousand ", "million ", "billion ",
-                    "trillion ", "quadrillion ", "quintillion ", 
+                thousands = [
+                    "", "thousand ", "million ", "billion ",
+                    "trillion ", "quadrillion ", "quintillion ",
                     "sextillion ", "septillion ", "octillion ",
-                    "nonillion ", "decillion ", "undecillion ", "duodecillion ",
-                    "tredecillion ", "quattuordecillion ", "sexdecillion ",
-                    "septendecillion ", "octodecillion ", "novemdecillion ",
-                    "vigintillion "]
+                    "nonillion ", "decillion ", "undecillion ",
+                    "duodecillion ", "tredecillion ",
+                    "quattuordecillion ", "sexdecillion ",
+                    "septendecillion ", "octodecillion ",
+                    "novemdecillion ", "vigintillion "]
 
                 n3 = []
 
