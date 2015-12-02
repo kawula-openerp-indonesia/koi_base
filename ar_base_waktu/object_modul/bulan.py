@@ -40,7 +40,6 @@ class bulan(osv.osv):
             ),
         }
 
-
     def jumlah_hari(self, cr, uid, bulan_id, tahun):
         obj_bulan = self.pool.get('base.bulan')
         bulan = obj_bulan.browse(cr, uid, [bulan_id])[0]
@@ -55,7 +54,6 @@ class bulan(osv.osv):
             else:
                 return 28
 
-
     def bulan_selanjutnya(self, cr, uid, bulan_id, tahun, skip):
         obj_bulan = self.pool.get('base.bulan')
         bulan = obj_bulan.browse(cr, uid, [bulan_id])[0]
@@ -64,7 +62,6 @@ class bulan(osv.osv):
             return [12 - bulan.urutan + skip, tahun+1]
         else:
             return [bulan.urutan + skip, tahun]
-
 
     def cek_tanggal_valid(self, cr, uid, bulan_id, tahun, tanggal):
         obj_bulan = self.pool.get('base.bulan')
