@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="tree_base_golonganDarah" model="ir.ui.view">
+			<field name="name">Tree Golongan Darah</field>
+			<field name="model">base.golongan_darah</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Golongan Darah">
+					<field name="kode" string="Kode"/>
+					<field name="name" string="Golongan Darah" select="1"/>
+				</tree>
+			</field>
+		</record>
+		
+		<record id="form_base_golonganDarah" model="ir.ui.view">
+			<field name="name">Form Golongan Darah</field>
+			<field name="model">base.golongan_darah</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Golongan Darah">
+					<field name="kode" string="Kode"/>
+					<field name="name" string="Golongan Darah" />
+				</form>
+			</field>
+		</record>
+	</data>
+	</openerp>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="form_base_statusPekerjaan" model="ir.ui.view">
+            <field name="name">form Status Pekerjaan</field>
+            <field name="model">base.status_pekerjaan</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Status Pekerjaan">
+					<field name="kode"/>
+                    <field name="name" select="1"/>
+                </form>
+            </field>
+        </record>
+
+		<record id="tree_base_statusPekerjaan" model="ir.ui.view">
+            <field name="name">tree Status Pekerjaan</field>
+            <field name="model">base.status_pekerjaan</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Status Pekerjaan">
+					<field name="kode"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="waction_base_etnis" model="ir.actions.act_window">
+			<field name="name">Etnis</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">base.etnis</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<record id="WactView_base_treeEtnis" model="ir.actions.act_window.view">
+			<field eval="10" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_base_etnis"/>
+			<field name="act_window_id" ref="waction_base_etnis"/>
+		</record>
+
+		<record id="WactView_base_formEtnis" model="ir.actions.act_window.view">
+			<field eval="20" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_base_etnis"/>
+			<field name="act_window_id" ref="waction_base_etnis"/>
+		</record>
+	</data>
+</openerp>

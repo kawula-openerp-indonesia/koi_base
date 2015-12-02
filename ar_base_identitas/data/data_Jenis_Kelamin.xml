@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="data_jenisKelamin_laki2" model="base.jenis_kelamin">
+			<field name="kode">L</field>
+			<field name="name">Laki-laki</field>
+		</record>
+
+		<record id="data_jenisKelamin_perempuan" model="base.jenis_kelamin">
+			<field name="kode">P</field>
+			<field name="name">Perempuan</field>
+		</record>
+	</data>
+</openerp>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="waction_base_golonganDarah" model="ir.actions.act_window">
+			<field name="name">Golongan Darah</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">base.golongan_darah</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<record id="WactView_base_treeGolonganDarah" model="ir.actions.act_window.view">
+			<field eval="10" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_base_golonganDarah"/>
+			<field name="act_window_id" ref="waction_base_golonganDarah"/>
+		</record>
+
+		<record id="WactView_base_formGolonganDarah" model="ir.actions.act_window.view">
+			<field eval="20" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_base_golonganDarah"/>
+			<field name="act_window_id" ref="waction_base_golonganDarah"/>
+		</record>
+	</data>
+</openerp>
