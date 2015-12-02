@@ -35,5 +35,3 @@ class etnis (osv.osv):
             required=True,
             ),
     }
-
-etnis()

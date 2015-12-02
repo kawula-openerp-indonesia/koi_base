@@ -35,5 +35,3 @@ class golongan_darah (osv.osv):
             required=True,
             ),
     }
-
-golongan_darah()

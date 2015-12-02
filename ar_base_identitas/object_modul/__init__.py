@@ -19,10 +19,9 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import agama
-import status_pekerjaan
-import jenis_kelamin
-import status_pernikahan
-import etnis
-import golongan_darah
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+from . import agama
+from . import status_pekerjaan
+from . import jenis_kelamin
+from . import status_pernikahan
+from . import etnis
+from . import golongan_darah

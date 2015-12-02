@@ -34,6 +34,3 @@ class jenis_kelamin(osv.osv):
             required=True,
             ),
     }
-
-jenis_kelamin()
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -34,7 +34,3 @@ class status_pernikahan(osv.osv):
             required=True,
             ),
         }
-
-status_pernikahan()
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

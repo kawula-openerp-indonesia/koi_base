@@ -34,7 +34,3 @@ class status_pekerjaan(osv.osv):
             required=True,
             ),
         }
-
-status_pekerjaan()
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
