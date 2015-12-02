@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="form_base_currencyAmntToText" model="ir.ui.view">
+			<field name="name">Form Mata Uang : amount_to_text</field>
+			<field name="model">res.currency</field>
+			<field name="inherit_id" ref="base.view_currency_form"/>
+			<field name="arch" type="xml">
+				<data>
+                    <field mode="tree" name="rate_ids" attrs="{'readonly':[('base','=',True)]}" position="replace">
+				        <notebook colspan="4">
+				            <page string="Rates">
+						        <field mode="tree" name="rate_ids" attrs="{'readonly':[('base','=',True)]}">
+						            <tree string="Rates" editable="bottom">
+						                <field name="name"/>
+						                <field name="rate"/>
+						            </tree>
+						        </field>
+		                    </page>
+				            <page string="Amount To Text">
+                        		<separator string="Amount To Text Function" colspan="2"/>
+                        		<newline/>
+				                <field name="fungsi_terbilang" nolabel="1"/>
+		                    </page>
+		                </notebook>
+					</field>
+				</data>
+
+			</field>
+		</record>
+	</data>
+</openerp>
