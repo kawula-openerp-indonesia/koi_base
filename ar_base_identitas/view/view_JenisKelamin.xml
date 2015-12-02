@@ -5,7 +5,6 @@
         <record id="form_base_jenisKelamin" model="ir.ui.view">
             <field name="name">form Jenis Kelamin</field>
             <field name="model">base.jenis_kelamin</field>
-            <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Jenis Kelamin">
 					<field name="kode"/>
@@ -17,7 +16,6 @@
 		<record id="tree_base_jenisKelamin" model="ir.ui.view">
             <field name="name">tree Jenis Kelamin</field>
             <field name="model">base.jenis_kelamin</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Jenis Kelamin">
 					<field name="kode"/>

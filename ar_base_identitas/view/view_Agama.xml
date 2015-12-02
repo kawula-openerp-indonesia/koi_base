@@ -4,7 +4,6 @@
         <record id="tree_base_agama" model="ir.ui.view">
             <field name="name">tree Agama</field>
             <field name="model">base.agama</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Agama">
 					<field name="kode"/>
@@ -15,7 +14,6 @@
 		<record id="form_base_agama" model="ir.ui.view">
             <field name="name">form Agama</field>
             <field name="model">base.agama</field>
-            <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Agama">
 				    <field name="kode"/>
