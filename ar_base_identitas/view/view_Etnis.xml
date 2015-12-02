@@ -4,7 +4,6 @@
 		<record id="tree_base_etnis" model="ir.ui.view">
 			<field name="name">Tree Etnis</field>
 			<field name="model">base.etnis</field>
-			<field name="type">tree</field>
 			<field name="arch" type="xml">
 				<tree string="Etnis">
 					<field name="kode" string="Kode"/>
@@ -16,7 +15,6 @@
 		<record id="form_base_etnis" model="ir.ui.view">
 			<field name="name">Form Etnis</field>
 			<field name="model">base.etnis</field>
-			<field name="type">form</field>
 			<field name="arch" type="xml">
 				<form string="Etnis">
 					<field name="kode" string="Kode"/>

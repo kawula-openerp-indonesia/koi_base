@@ -5,7 +5,6 @@
         <record id="form_base_statusPernikahan" model="ir.ui.view">
             <field name="name">form Status Pernikahan</field>
             <field name="model">base.status_pernikahan</field>
-            <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Status Perkawinan">
 					<field name="kode"/>
@@ -17,7 +16,6 @@
 		<record id="tree_base_statusPernikahan" model="ir.ui.view">
             <field name="name">tree Status Pernikahan</field>
             <field name="model">base.status_pernikahan</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Status Perkawinan">
 					<field name="kode"/>
