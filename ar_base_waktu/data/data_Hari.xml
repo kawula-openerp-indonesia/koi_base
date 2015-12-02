@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="data_hari_senin" model="base.hari">
+            <field name="kode">01</field>
+            <field name="name">Senin</field>
+            <field name="urutan">1</field>
+        </record>
+
+        <record id="data_hari_selasa" model="base.hari">
+            <field name="kode">02</field>
+            <field name="name">Selasa</field>
+            <field name="urutan">2</field>
+        </record>
+
+        <record id="data_hari_rabu" model="base.hari">
+            <field name="kode">03</field>
+            <field name="name">Rabu</field>
+            <field name="urutan">3</field>
+        </record>
+        
+        <record id="data_hari_kamis" model="base.hari">
+            <field name="kode">04</field>
+            <field name="name">Kamis</field>
+            <field name="urutan">4</field>
+        </record>       
+        
+        <record id="data_hari_jumat" model="base.hari">
+            <field name="kode">05</field>
+            <field name="name">Jumat</field>
+            <field name="urutan">5</field>
+        </record>       
+        
+        <record id="data_hari_sabtu" model="base.hari">
+            <field name="kode">06</field>
+            <field name="name">Sabtu</field>
+            <field name="urutan">6</field>
+        </record>       
+        
+        <record id="data_hari_minggu" model="base.hari">
+            <field name="kode">07</field>
+            <field name="name">Minggu</field>
+            <field name="urutan">7</field>
+        </record>       
+
+    </data>
+</openerp>

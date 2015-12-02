@@ -1,0 +1,6 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"data_accessRight_baseBulan","data_accessRight_baseBulan","model_base_bulan",,1,1,1,1
+"data_accessRight_baseHari","data_accessRight_baseHari","model_base_hari",,1,1,1,1
+
+
+
