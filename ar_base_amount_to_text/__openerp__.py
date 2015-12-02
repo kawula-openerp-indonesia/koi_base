@@ -24,7 +24,6 @@
     'author': 'Kawula OpenERP Indonesia, Andhitia Rama & Michael Viriyananda',
     'category': 'Base',
     'description': """
-Amount to text module. Add the capability of currency so each currency can have it own method.
     """,
     'website': 'https://github.com/kawula-openerp-indonesia',
     'images': [],

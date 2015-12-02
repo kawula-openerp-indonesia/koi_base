@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
-#    OpenERP, Open Source Management Solution   
+#    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -42,7 +42,7 @@ class res_currency(osv.osv):
             try:
                 f = getattr(obj_currency, currency.fungsi_terbilang, None)
             except Exception, e:
-                raise osv.except_osv(_('Error !'), _('%s')%e)
+                raise osv.except_osv(_('Error !'), _('%s') % e )
             else:
                 hasil = f(cr, uid, nilai)
 
@@ -55,7 +55,7 @@ class res_currency(osv.osv):
         eval(currency.fungsi_terbilang, localdict, mode='exec', nocopy=True)
 
         val = {
-            'terbilang' : localdict['nw'],
+            'terbilang': localdict['nw'],
             }
 
         return val
@@ -64,9 +64,16 @@ class res_currency(osv.osv):
         def terbilang_indo_child(n):
             nw = ''
             if n > 0:
-                ones = ["", "Satu ","Dua ","Tiga ","Empat ", "Lima ","Enam ","Tujuh ","Delapan ","Sembilan "]
-                tens = ["Sepuluh ","Sebelas ","Dua Belas ","Tiga Belas ", "Empat Belas ","Lima Belas ","Enam Belas ","Tujuh Belas ","Delapan Belas ","Sembilan Belas "]
-                twenties = ["","","Dua Puluh ","Tiga Puluh ","Empat Puluh ","Lima Puluh ","Enam Puluh ","Tujuh Puluh ","Delapan Puluh ","Sembilan Puluh "]
+                ones = ["", "Satu ", "Dua ", "Tiga ",
+                    "Empat ", "Lima ", "Enam ", "Tujuh ", "Delapan ",
+                    "Sembilan "]
+                tens = ["Sepuluh ", "Sebelas ", "Dua Belas ",
+                    "Tiga Belas ", "Empat Belas ", "Lima Belas ",
+                    "Enam Belas ", "Tujuh Belas ", "Delapan Belas ",
+                    "Sembilan Belas "]
+                twenties = ["", "", "Dua Puluh ", "Tiga Puluh ",
+                    "Empat Puluh ", "Lima Puluh ", "Enam Puluh ",
+                    "Tujuh Puluh ", "Delapan Puluh ", "Sembilan Puluh "]
                 thousands = ["","Ribu ","Juta ", "Milyar "]
 
                 n3 = []
@@ -130,10 +137,21 @@ class res_currency(osv.osv):
         def terbilang_eng_child(n):
             nw = ''
             if n > 0:
-                ones = ["", "one ","two ","three ","four ", "five ","six ","seven ","eight ","nine "]
-                tens = ["ten ","eleven ","twelve ","thirteen ", "fourteen ","fifteen ","sixteen ","seventeen ","eighteen ","nineteen "]
-                twenties = ["","","twenty ","thirty ","forty ","fifty ","sixty ","seventy ","eighty ","ninety "]
-                thousands = ["","thousand ","million ", "billion ", "trillion ","quadrillion ", "quintillion ", "sextillion ", "septillion ","octillion ","nonillion ", "decillion ", "undecillion ", "duodecillion ", "tredecillion ","quattuordecillion ", "sexdecillion ", "septendecillion ", "octodecillion ","novemdecillion ", "vigintillion "]
+                ones = ["", "one ", "two ", "three ", "four ",
+                    "five ","six ","seven ","eight ","nine "]
+                tens = ["ten ", "eleven ", "twelve ", "thirteen ",
+                    "fourteen ", "fifteen ", "sixteen ",
+                    "seventeen ", "eighteen ", "nineteen "]
+                twenties = ["", "", "twenty ", "thirty ", "forty ",
+                    "fifty ", "sixty ", "seventy ", "eighty ",
+                    "ninety "]
+                thousands = ["", "thousand ", "million ", "billion ",
+                    "trillion ", "quadrillion ", "quintillion ", 
+                    "sextillion ", "septillion ", "octillion ",
+                    "nonillion ", "decillion ", "undecillion ", "duodecillion ",
+                    "tredecillion ", "quattuordecillion ", "sexdecillion ",
+                    "septendecillion ", "octodecillion ", "novemdecillion ",
+                    "vigintillion "]
 
                 n3 = []
 
