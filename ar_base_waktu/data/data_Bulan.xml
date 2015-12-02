@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="data_bulan1" model="base.bulan">
+            <field name="kode">01</field>
+            <field name="name">Januari</field>
+            <field name="urutan">1</field>
+        </record>
+
+        <record id="data_bulan2" model="base.bulan">
+            <field name="kode">02</field>
+            <field name="name">Februari</field>
+            <field name="urutan">2</field>
+        </record>       
+        
+        <record id="data_bulan3" model="base.bulan">
+            <field name="kode">03</field>
+            <field name="name">Maret</field>
+            <field name="urutan">3</field>
+        </record>       
+        
+        <record id="data_bulan4" model="base.bulan">
+            <field name="kode">04</field>
+            <field name="name">April</field>
+            <field name="urutan">4</field>
+        </record>       
+        
+        <record id="data_bulan5" model="base.bulan">
+            <field name="kode">05</field>
+            <field name="name">Mei</field>
+            <field name="urutan">5</field>
+        </record>       
+        
+        <record id="data_bulan6" model="base.bulan">
+            <field name="kode">06</field>
+            <field name="name">Juni</field>
+            <field name="urutan">6</field>
+        </record>       
+        
+        <record id="data_bulan7" model="base.bulan">
+            <field name="kode">07</field>
+            <field name="name">Juli</field>
+            <field name="urutan">7</field>
+        </record>       
+        
+        <record id="data_bulan8" model="base.bulan">
+            <field name="kode">08</field>
+            <field name="name">Agustus</field>
+            <field name="urutan">8</field>
+        </record>       
+        
+        <record id="data_bulan9" model="base.bulan">
+            <field name="kode">09</field>
+            <field name="name">September</field>
+            <field name="urutan">9</field>
+        </record>       
+        
+        <record id="data_bulan10" model="base.bulan">
+            <field name="kode">10</field>
+            <field name="name">Oktober</field>
+            <field name="urutan">11</field>
+        </record>       
+        
+        <record id="data_bulan11" model="base.bulan">
+            <field name="kode">11</field>
+            <field name="name">November</field>
+            <field name="urutan">11</field>
+        </record>       
+        
+        <record id="data_bulan12" model="base.bulan">
+            <field name="kode">12</field>
+            <field name="name">Desember</field>
+            <field name="urutan">12</field>
+        </record>       
+
+    </data>
+</openerp>
