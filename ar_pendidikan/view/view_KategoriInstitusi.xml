@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_pendidikan_kategoriInstitusi" model="ir.ui.view">
+            <field name="name">Tree Kategori Institusi</field>
+            <field name="model">pendidikan.kategori_institusi</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+				<tree string = "Kategori Institusi">
+                    <field name="kode"/>
+                    <field name="name"/>
+				</tree>
+			</field>
+        </record>
+        <!-- ditz -->
+        
+        <record id="form_pendidikan_kategoriInstitusi" model="ir.ui.view">
+            <field name="name">Form Kategori Institusi</field>
+            <field name="model">pendidikan.kategori_institusi</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+				<form string = "Kategori Institusi">
+                    <field name="kode"/>
+                    <field name="name"/>
+				</form>
+			</field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="data_jenisJenjangPendidikan_dikdasmen" model="pendidikan.jenis_jenjang_pendidikan">
+            <field name="name">Dikdasmen</field>
+        </record>
+        
+        <record id="data_jenisJenjangPendidikan_dikti" model="pendidikan.jenis_jenjang_pendidikan">
+            <field name="name">Dikti</field>
+        </record>        
+        
+      
+
+    </data>
+</openerp>

@@ -1,0 +1,7 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"data_accessRight_pendidikanJenisJenjangPendidikan","data_accessRight_pendidikanJenisJenjangPendidikan","model_pendidikan_jenis_jenjang_pendidikan",,1,1,1,1
+"data_accessRight_pendidikanJenjangPendidikan","data_accessRight_pendidikanJenjangPendidikan","model_pendidikan_jenjang_pendidikan",,1,1,1,1
+"data_accessRight_pendidikanKategoriInstitusi","data_accessRight_pendidikanKategoriInstitusi","model_pendidikan_kategori_institusi",,1,1,1,1
+"data_accessRight_pendidikanKepemilikanInstitusi","data_accessRight_pendidikanKepemilikanInstitusi","model_pendidikan_kepemilikan_institusi",,1,1,1,1
+
+
