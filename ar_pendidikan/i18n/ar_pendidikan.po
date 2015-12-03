@@ -1,0 +1,62 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* ar_pendidikan
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20130823-231028\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-29 03:33+0000\n"
+"PO-Revision-Date: 2013-08-29 03:33+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ar_pendidikan
+#: model:ir.actions.act_window,name:ar_pendidikan.waction_pendidikan_jenisJenjangPendidikan
+#: model:ir.model,name:ar_pendidikan.model_pendidikan_jenis_jenjang_pendidikan
+#: view:pendidikan.jenis_jenjang_pendidikan:0
+#: field:pendidikan.jenis_jenjang_pendidikan,name:0
+msgid "Jenis Jenjang Pendidikan"
+msgstr ""
+
+#. module: ar_pendidikan
+#: field:pendidikan.jenis_jenjang_pendidikan,kode:0
+#: field:pendidikan.jenjang_pendidikan,kode:0
+#: field:pendidikan.kategori_institusi,kode:0
+#: field:pendidikan.kepemilikan_institusi,kode:0
+msgid "Kode"
+msgstr ""
+
+#. module: ar_pendidikan
+#: model:ir.actions.act_window,name:ar_pendidikan.waction_pendidikan_kategoriInstitusi
+#: model:ir.model,name:ar_pendidikan.model_pendidikan_kategori_institusi
+#: view:pendidikan.kategori_institusi:0
+#: field:pendidikan.kategori_institusi,name:0
+msgid "Kategori Institusi"
+msgstr ""
+
+#. module: ar_pendidikan
+#: field:pendidikan.jenjang_pendidikan,jenis_jenjang_id:0
+msgid "Jenis Jenjang"
+msgstr ""
+
+#. module: ar_pendidikan
+#: model:ir.actions.act_window,name:ar_pendidikan.waction_pendidikan_jenjangPendidikan
+#: model:ir.model,name:ar_pendidikan.model_pendidikan_jenjang_pendidikan
+#: view:pendidikan.jenjang_pendidikan:0
+#: field:pendidikan.jenjang_pendidikan,name:0
+msgid "Jenjang Pendidikan"
+msgstr ""
+
+#. module: ar_pendidikan
+#: model:ir.actions.act_window,name:ar_pendidikan.waction_pendidikan_kepemilikanInstitusi
+#: model:ir.model,name:ar_pendidikan.model_pendidikan_kepemilikan_institusi
+#: view:pendidikan.kepemilikan_institusi:0
+#: field:pendidikan.kepemilikan_institusi,name:0
+msgid "Kepemilikan Institusi"
+msgstr ""
+

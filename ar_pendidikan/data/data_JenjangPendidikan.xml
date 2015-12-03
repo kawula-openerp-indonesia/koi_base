@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        
+        <record id="data_jenjangPendidikan_tk" model="pendidikan.jenjang_pendidikan">
+            <field name="name">TK</field>
+            <field name="jenis_jenjang_id" ref="data_jenisJenjangPendidikan_dikdasmen"/>
+        </record>    
+        
+        <record id="data_jenjangPendidikan_sd" model="pendidikan.jenjang_pendidikan">
+            <field name="name">SD</field>
+            <field name="jenis_jenjang_id" ref="data_jenisJenjangPendidikan_dikdasmen"/>
+        </record>      
+        
+        <record id="data_jenjangPendidikan_smp" model="pendidikan.jenjang_pendidikan">
+            <field name="name">SMP</field>
+            <field name="jenis_jenjang_id" ref="data_jenisJenjangPendidikan_dikdasmen"/>
+        </record>       
+        
+        <record id="data_jenjangPendidikan_sma" model="pendidikan.jenjang_pendidikan">
+            <field name="name">SMA</field>
+            <field name="jenis_jenjang_id" ref="data_jenisJenjangPendidikan_dikdasmen"/>
+        </record>  
+        
+        <record id="data_jenjangPendidikan_d1" model="pendidikan.jenjang_pendidikan">
+            <field name="name">D-1</field>
+            <field name="jenis_jenjang_id" ref="data_jenisJenjangPendidikan_dikti"/>
+        </record>    
+        
+        <record id="data_jenjangPendidikan_d2" model="pendidikan.jenjang_pendidikan">
+            <field name="name">D-2</field>
+            <field name="jenis_jenjang_id" ref="data_jenisJenjangPendidikan_dikti"/>
+        </record>    
+        
+        <record id="data_jenjangPendidikan_d3" model="pendidikan.jenjang_pendidikan">
+            <field name="name">D-3</field>
+            <field name="jenis_jenjang_id" ref="data_jenisJenjangPendidikan_dikti"/>
+        </record>          
+        
+        <record id="data_jenjangPendidikan_d4" model="pendidikan.jenjang_pendidikan">
+            <field name="name">D-4</field>
+            <field name="jenis_jenjang_id" ref="data_jenisJenjangPendidikan_dikti"/>
+        </record>        
+        
+        <record id="data_jenjangPendidikan_s1" model="pendidikan.jenjang_pendidikan">
+            <field name="name">S-1</field>
+            <field name="jenis_jenjang_id" ref="data_jenisJenjangPendidikan_dikti"/>
+        </record> 
+        
+        <record id="data_jenjangPendidikan_s2" model="pendidikan.jenjang_pendidikan">
+            <field name="name">S-2</field>
+            <field name="jenis_jenjang_id" ref="data_jenisJenjangPendidikan_dikti"/>
+        </record>  
+        
+        <record id="data_jenjangPendidikan_s3" model="pendidikan.jenjang_pendidikan">
+            <field name="name">S-3</field>
+            <field name="jenis_jenjang_id" ref="data_jenisJenjangPendidikan_dikti"/>
+        </record>                                                                       
+        
+      
+
+    </data>
+</openerp>
