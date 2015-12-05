@@ -1,0 +1,9 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"data_accessRight_baseJenisUsahaPerusahaan","data_accessRight_baseJenisUsahaPerusahaan","model_base_jenis_usaha_perusahaan",,1,1,1,1
+"data_accessRight_baseKepemilikanPerusahaan","data_accessRight_baseKepemilikanPerusahaan","model_base_kepemilikan_perusahaan",,1,1,1,1
+"data_accessRight_baseStatusPerusahaan","data_accessRight_baseStatusPerusahaan","model_base_status_perusahaan",,1,1,1,1
+
+
+
+
+
