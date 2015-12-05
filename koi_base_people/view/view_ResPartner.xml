@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+         <record id="form_base_contactAdditionalInfo" model="ir.ui.view">
+         	<field name="name">Form Contact Additional Information</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="/form/sheet/group/group/field[@name='function']" position="before">
+                        <field name="work_at_id" options="{'create':false, 'create_edit':false, 'm2o_dialog':false, 'no_open':true}" attrs="{'invisible':[('is_company','=',True)]}"/>
+                    </xpath>
+					<notebook colspan="4" position="inside">
+						<page string="Personal Info" attrs="{'invisible' : [('is_company','=',True)]}">
+							<group name="group_1" colspan="4" col="2">
+                                <group name="group_1_1" colspan="1" col="2">
+                                    <field name="born_in"/>
+                                    <field name="birthday"/>
+                                    <group name="group_1_1_1" colspan="2" col="3">
+                                        <field name="age_year"/>
+                                        <label string="Year(s)"/>
+                                        <!-- <field name="age_month" string=" "/> -->
+                                        <!-- <label string="Month(s)"/> -->
+                                        <!-- <field name="age_day" string=" "/> -->
+                                        <!-- <label string="Day(s)"/> -->
+                                    </group>
+                                    <group name="group_1_1_2" colspan="2" col="2">
+                                    </group>
+                                </group>
+                                <group name="group_1_2" colspan="1" col="2">
+                                    <field name="gender_id" options="{'create':false, 'create_edit':false, 'm2o_dialog':false, 'no_open':true}"/>
+                                    <field name="religion_id" options="{'create':false, 'create_edit':false, 'm2o_dialog':false, 'no_open':true}"/>
+                                    <field name="ethnic_id" options="{'create':false, 'create_edit':false, 'm2o_dialog':false, 'no_dialog':true}"/>
+                                    <field name="marital_status_id" options="{'create':false, 'create_edit':false, 'm2o_dialog':false, 'no_open':true}"/>
+                                    <field name="blood_type_id" options="{'create':false, 'create_edit':false, 'm2o_dialog':false, 'no_open':true}"/>
+                                </group>
+							</group>
+						</page>
+                        <page string="Family">
+                            <group name="group_7" colspan="4" col="2">
+                                <field name="father_id" options="{'create':false, 'create_edit':false, 'm2o_dialog':false, 'no_open':true}"/>
+                                <field name="mother_id" options="{'create':false, 'create_edit':false, 'm2o_dialog':false, 'no_open':true}"/>
+                                <field name="spouse_id" options="{'create':false, 'create_edit':false, 'm2o_dialog':false, 'no_open':true}"/>
+                            </group>
+                            <separator string="Children(s)" colspan="2"/>
+                            <field name="children_ids" colspan="4" nolabel="1" mode="tree">
+                                <tree string="Children" editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="children_id" options="{'create':false, 'create_edit':false, 'm2o_dialog':false, 'no_open':true}"/>
+                                </tree>
+                            </field>
+                            <separator string="Other Families" colspan="2"/>
+                            <field name="other_family_ids" colspan="4" nolabel="1" mode="tree">
+                                <tree string="Other Family" editable="bottom">
+                                    <field name="family_id" options="{'create':false, 'create_edit':false, 'm2o_dialog':false, 'no_open':true}"/>
+                                    <field name="family_relationship_type_id" options="{'create':false, 'create_edit':false, 'm2o_dialog':false, 'no_open':true}"/>
+                                </tree>
+                            </field>
+                        </page>
+					</notebook>
+
+                    <xpath expr="/form[@string='Partners']/sheet/notebook/page[@string='Contacts']/field[@name='child_ids']/form[@string='Contact']/sheet" position="inside">
+                        <notebook name="notebook1" colspan="4" attrs="{'invisible':[('type','!=','contact')]}">
+                            <page string="Personal Information">
+							    <group name="group_2" colspan="4" col="2">
+                                    <group name="group_2_1" colspan="1" col="2">
+                                        <field name="born_in"/>
+                                        <field name="birthday"/>
+                                        <group name="group_2_1_1" colspan="2" col="3">
+                                            <field name="age_year"/>
+                                            <label string="Year(s)"/>
+                                            <field name="age_month" string=" "/>
+                                            <label string="Month(s)"/>
+                                            <field name="age_day" string=" "/>
+                                            <label string="Day(s)"/>
+                                        </group>
+                                    </group>
+                                    <group name="group_2_2" colspan="1" col="2">
+                                        <field name="gender_id" options="{'create':false, 'create_edit':false, 'm2o_dialog':false, 'no_open':true}"/>
+                                        <field name="religion_id" options="{'create':false, 'create_edit':false, 'm2o_dialog':false, 'no_open':true}"/>
+                                        <field name="ethnic_id" options="{'create':false, 'create_edit':false, 'm2o_dialog':false, 'no_open':true}"/>
+                                        <field name="marital_status_id" options="{'create':false, 'create_edit':false, 'm2o_dialog':false, 'no_open':true}"/>
+                                        <field name="blood_type_id" options="{'create':false, 'create_edit':false, 'm2o_dialog':false, 'no_open':true}"/>
+                                    </group>
+							    </group>
+                            </page>
+                            <page string="Family">
+                                <field name="children_ids" colspan="4" nolabel="1" mode="tree">
+                                    <tree string="Children" editable="bottom">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="children_id" options="{'create':false, 'create_edit':false, 'm2o_dialog':false, 'no_open':true}"/>
+                                    </tree>
+                                </field>
+
+                            </page>
+                        </notebook>
+                    </xpath>
+				</data>
+            </field>
+        </record>
+
+
+
+
+        <record id="tree_base_resPartner001" model="ir.ui.view">
+            <field name="name">tree - res.partner - koi_base_people - 001</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='function']" position="before">
+                        <field name="work_at_id" invisible="context.get('default_is_company',False)"/>
+                    </xpath>
+
+                    <xpath expr="//field[@name='function']" position="attributes">
+                        <attribute name="invisible">context.get('default_is_company', False)</attribute>
+                    </xpath>
+                </data>           
+            </field>
+        </record>
+
+    </data>
+</openerp>
+
