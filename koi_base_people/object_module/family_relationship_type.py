@@ -24,7 +24,10 @@ class family_relationship_type(osv.osv):
     _name = 'base.family_relationship_type'
     _description = 'Family Relationship Type'
 
-    def _default_active(self, cr, uid, context={}):
+    def _default_active(self, cr, uid, context=None):
+        if context is None:
+            context = {}
+
         return True
 
     _columns = {

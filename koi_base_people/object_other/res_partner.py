@@ -153,7 +153,10 @@ class partner_children(osv.osv):
     _name = 'base.partner_children'
     _description = 'Children'
 
-    def _default_sequence(self, cr, uid, context={}):
+    def _default_sequence(self, cr, uid, context=None):
+        if context is None:
+            context = {}
+
         return 5
 
     _columns = {
