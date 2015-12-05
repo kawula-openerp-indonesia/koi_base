@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+         <record id="form_base_legalitasPerusahaan" model="ir.ui.view">
+         	<field name="name">Form Legalitas Perusahaan</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <data>
+					<notebook colspan="4" position="inside">
+						<page string="Legalitas Perusahaan" attrs="{'invisible' : [('is_company','=',False)]}">
+							<group name="group_1">
+								<field name="status_perusahaan_id"/>
+								<field name="kepemilikan_perusahaan_id"/>
+								<field name="jenis_usaha_utama_id"/>
+                                <field name="npwp"/>
+                                <field name="tanggal_pengukuhan_pkp"/>
+
+							</group>
+
+						</page>
+					</notebook>
+				</data>
+            </field>
+        </record>
+    </data>
+</openerp>
+

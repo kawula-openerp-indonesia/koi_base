@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_base_statusPerusahaan" model="ir.ui.view">
+            <field name="name">Tree Status Perusahaan</field>
+            <field name="model">base.status_perusahaan</field>
+            <field name="arch" type="xml">
+                <tree string="Status Perusahaan">
+                	<field name="name"/>
+					<field name="kode"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_base_statusPerusahaan" model="ir.ui.view">
+            <field name="name">Form Status Perusahaan</field>
+            <field name="model">base.status_perusahaan</field>
+            <field name="arch" type="xml">
+                <form string="Status Perusahaan" version="7.0">
+					<sheet>
+						<group colspan="4" col="2" name="group_1">
+							<group colspan="1" col="2" name="group_1_1">
+								<field name="kode" placeholder="Status perusahaan"/>
+						        <field name="name" placeholder="Status perusahaan e.g. : PT, CV, dll"/>														
+							</group>
+							<group colspan="1" col="2" name="group_1_2">
+								<field name="active"/>														
+							</group>
+						</group>
+						<label for="keterangan"/>
+		            	<field name="keterangan" nolabel="1" colspan="4" placeholder="Keterangan tambahan ..."/>	
+					</sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_base_statusPerusahaan" model="ir.ui.view">
+            <field name="name">Search Status Perusahaan</field>
+            <field name="model">base.status_perusahaan</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Status Perusahaan">
+                	<field name="name"/>
+					<field name="kode"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+
