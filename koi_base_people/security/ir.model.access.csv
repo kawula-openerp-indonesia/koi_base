@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+data_accessRight_basePartnerChildren,data_accessRight_basePartnerChildren,koi_base_people.model_base_partner_children,,1,1,1,1
+data_accessRight_basePartnerOtherFamily,data_accessRight_basePartnerOtherFamily,koi_base_people.model_base_partner_other_family,,1,1,1,1
+data_accessRight_baseFamilyRelationshipType,data_accessRight_baseFamilyRelationshipType,koi_base_people.model_base_family_relationship_type,,1,1,1,1

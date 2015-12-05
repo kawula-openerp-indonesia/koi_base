@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="tree_base_familyRelationshipType001" model="ir.ui.view">
+			<field name="name">Tree - base.family_relationship_type - koi_base_people - 001</field>
+			<field name="model">base.family_relationship_type</field>
+			<field name="arch" type="xml">
+				<tree string="Family Relationship Type">
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+		
+		<record id="form_base_familyRelationshipType001" model="ir.ui.view">
+			<field name="name">Form - base.family_relationship_type - koi_base_people - 001</field>
+			<field name="model">base.family_relationship_type</field>
+			<field name="arch" type="xml">
+				<form string="Family Relationship Type" version="7.0">
+                    <sheet>
+                        <group name="group_1" colspan="4" col="2">
+        					<field name="name"/>
+                            <field name="active"/>
+                        </group>
+                        <field name="description" colspan="4" nolabel="1"/>
+                    </sheet>
+				</form>
+			</field>
+		</record>
+	</data>
+	</openerp>
