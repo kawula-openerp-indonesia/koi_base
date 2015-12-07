@@ -26,7 +26,7 @@
     'description': """
     """,
     'depends': ['base'],
-    'data': [   
+    'data': [
         'data/res.bank.csv',
         ],
     'installable': True,
