@@ -18,7 +18,6 @@
 #
 ##############################################################################
 
-import openerp
 from openerp.osv import fields, osv
 
 
