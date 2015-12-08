@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+         <record id="form_base_contactAdditionalInfo" model="ir.ui.view">
+         	<field name="name">Form Contact Additional Information</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <data>
+					<notebook colspan="4" position="inside">
+						<page string="Personal Identification" attrs="{'invisible' : [('is_company','=',True)]}">
+							<group name="group_1" colspan="4" col="2">
+                                <group name="group_1_1" colspan="1" col="3">
+                                    <field name="ktp"/>
+                                    <field name="expired_ktp" nolabel="1"/>
+                                    <field name="sim"/>
+                                    <field name="expired_sim" nolabel="1"/>
+                                    <field name="simb1"/>
+                                    <field name="expired_simb1" nolabel="1"/>
+                                    <field name="simb2"/>
+                                    <field name="expired_simb2" nolabel="1"/>
+                                    <field name="passport"/>
+                                    <field name="expired_passport" nolabel="1"/>
+                                    <field name="kitas"/>
+                                    <field name="expired_kitas" nolabel="1"/>
+                                </group>
+							</group>
+						</page>
+					</notebook>
+				</data>
+            </field>
+        </record>
+
+         <record id="form_base_contactAdditionalInfo2" model="ir.ui.view">
+         	<field name="name">Form Contact Additional Information 2</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="koi_base_people.form_base_contactAdditionalInfo"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//notebook[@name='notebook1']" position="inside">
+						<page string="Personal Identification">
+							<group name="group_1" colspan="4" col="2">
+                                <group name="group_1_1" colspan="1" col="3">
+                                    <field name="ktp"/>
+                                    <field name="expired_ktp" nolabel="1"/>
+                                    <field name="sim"/>
+                                    <field name="expired_sim" nolabel="1"/>
+                                    <field name="simb1"/>
+                                    <field name="expired_simb1" nolabel="1"/>
+                                    <field name="simb2"/>
+                                    <field name="expired_simb2" nolabel="1"/>
+                                    <field name="passport"/>
+                                    <field name="expired_passport" nolabel="1"/>
+                                    <field name="kitas"/>
+                                    <field name="expired_kitas" nolabel="1"/>
+                                </group>
+							</group>
+						</page>
+                    </xpath>
+				</data>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="form_base_tipeIdentitas" model="ir.ui.view">
+            <field name="name">form Tipe Identitas</field>
+            <field name="model">base.tipe_identitas</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Tipe Identitas">
+					<field name="kode"/>
+                    <field name="name" select="1"/>
+                </form>
+            </field>
+        </record>
+
+		<record id="tree_base_tipeIdentitas" model="ir.ui.view">
+            <field name="name">tree Tipe Identitas</field>
+            <field name="model">base.tipe_identitas</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Tipe Identitas">
+					<field name="kode"/>
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>
