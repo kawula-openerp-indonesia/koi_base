@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="waction_base_tipeIdentitas" model="ir.actions.act_window">
+			<field name="name">Tipe Identitas</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">base.tipe_identitas</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<record id="WactView_base_treeTipeIdentitas" model="ir.actions.act_window.view">
+			<field eval="10" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_base_tipeIdentitas"/>
+			<field name="act_window_id" ref="waction_base_tipeIdentitas"/>
+		</record>
+
+		<record id="WactView_base_formTipeIdentitas" model="ir.actions.act_window.view">
+			<field eval="20" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_base_tipeIdentitas"/>
+			<field name="act_window_id" ref="waction_base_tipeIdentitas"/>
+		</record>
+	</data>
+</openerp>
