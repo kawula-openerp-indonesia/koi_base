@@ -26,7 +26,7 @@ class approval_template(osv.osv):
     _description = 'Approval Template'
     _inherit = ['mail.thread']
 
-    def default_active(self, cr, uid, context={}):
+    def default_active(self, cr, uid, context=None):
         return True
 
     _columns = {

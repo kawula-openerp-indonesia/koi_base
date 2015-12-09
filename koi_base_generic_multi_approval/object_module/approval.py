@@ -239,7 +239,6 @@ class approval(osv.osv):
                     _('Warning!'),
                     _('You are not allowed to approve/reject this document.\n'
                         'Please contact system admin'))
-                return False
 
     def _allowed_to_bypass(self, cr, uid, id):
         allowed_user_ids = []
@@ -251,7 +250,6 @@ class approval(osv.osv):
                 _('Warning'),
                 _('No one allowed to bypass approval this document.\n'
                     'Please reconfigure approval template'))
-            return False
         else:
             for user in approval.allowed_bypass_user_ids:
                 allowed_user_ids.append(user.id)
@@ -263,6 +261,5 @@ class approval(osv.osv):
                     _('Warning!'),
                     _('You are not allowed to bypass approval this document.\n'
                         'Please contact system admin'))
-                return False
 
 approval()
