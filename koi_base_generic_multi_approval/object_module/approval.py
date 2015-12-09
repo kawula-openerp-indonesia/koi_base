@@ -36,10 +36,10 @@ class approval(osv.osv):
         ('bypass', 'Bypass')
     ]
 
-    def default_sequence(self, cr, uid, context={}):
+    def default_sequence(self, cr, uid, context=None):
         return 5
 
-    def default_state(self, cr, uid, context={}):
+    def default_state(self, cr, uid, context=None):
         return 'draft'
 
     def function_allowed_user(
@@ -224,10 +224,10 @@ class approval(osv.osv):
         approval = self.browse(cr, uid, [id])[0]
 
         if not approval.allowed_approve_user_ids:
-            err = 'No one allowed to approve this document.'\
-                'Please reconfigure approval template'
-            raise osv.except_osv(_('Warning'), _(err))
-            return False
+            raise osv.except_osv(
+                _('Warning'),
+                _('No one allowed to approve this document.\n'
+                    'Please reconfigure approval template'))
         else:
             for user in approval.allowed_approve_user_ids:
                 allowed_user_ids.append(user.id)
@@ -235,9 +235,10 @@ class approval(osv.osv):
             if uid in allowed_user_ids:
                 return True
             else:
-                err = 'You are not allowed to approve/reject this document.'\
-                    'Please contact system admin'
-                raise osv.except_osv(_('Warning!'), _(err))
+                raise osv.except_osv(
+                    _('Warning!'),
+                    _('You are not allowed to approve/reject this document.\n'
+                        'Please contact system admin'))
                 return False
 
     def _allowed_to_bypass(self, cr, uid, id):
@@ -246,9 +247,10 @@ class approval(osv.osv):
         approval = self.browse(cr, uid, [id])[0]
 
         if not approval.allowed_bypass_user_ids:
-            err = 'No one allowed to bypass approval this document.'\
-                'Please reconfigure approval template'
-            raise osv.except_osv(_('Warning'), _(err))
+            raise osv.except_osv(
+                _('Warning'),
+                _('No one allowed to bypass approval this document.\n'
+                    'Please reconfigure approval template'))
             return False
         else:
             for user in approval.allowed_bypass_user_ids:
@@ -257,9 +259,10 @@ class approval(osv.osv):
             if uid in allowed_user_ids:
                 return True
             else:
-                err = 'You are not allowed to bypass approval this document.'\
-                    'Please contact system admin'
-                raise osv.except_osv(_('Warning!'), _(err))
+                raise osv.except_osv(
+                    _('Warning!'),
+                    _('You are not allowed to bypass approval this document.\n'
+                        'Please contact system admin'))
                 return False
 
 approval()
