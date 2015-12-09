@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <!-- wiki Form view  -->
+        <record id="form_base_documentPage" model="ir.ui.view">
+            <field name="name">Form Document Page : koi_document_pages</field>
+            <field name="model">document.page</field>
+            <field name="inherit_id" ref="document_page.view_wiki_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="type" invisible="1" position="before">
+                        <header>
+                            <button name="workflow_action_confirm" string="Confirm" type="object" states="draft" class="oe_highlight"/>
+                            <button name="workflow_action_approve" string="Approve" type="object" states="confirm" class="oe_highlight"/>
+                            <button name="workflow_action_reject" string="Reject" type="object" states="confirm"/>
+                            <button name="workflow_action_bypass" string="Bypass" type="object" states="confirm"/>
+                            <button name="workflow_action_restart" string="Set To Draft" type="object" states="obsolete,approve,confirm"/>
+                            <button name="workflow_action_obsolete" string="Obsolete" type="object" states="approve"/>
+                            <field name="state" widget="statusbar"/>
+                        </header>
+                    </field>
+                    <div class="oe_document_page" position="before">
+                        <group name="group_1">
+                            <field name="approval_template_id" on_change="approval_onchange_approval_template_id(approval_template_id)" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="active_approval_id" invisible="1"/>
+                            <field name="next_approval_id" invisible="1"/>
+                        </group>
+                        <field name="approval_ids" model="tree" colspan="4" context="{'default_model' : 'document.page'}" attrs="{'readonly':[('state','!=','draft')]}">
+                            <tree string="Approval" editable="bottom">
+                                <field name="sequence" widget="handle"/>
+                                <field name="model" invisible="1"/>
+                                <field name="name"/>
+                                <field name="approval_template_detail_id"/>
+                                <field name="allowed_approve_user_ids"/>
+                                <field name="approve_user_id"/>
+                                <field name="approve_time"/>
+                                <field name="bypass"/>
+                                <field name="allowed_bypass_user_ids"/>
+                                <field name="bypass_user_id"/>
+                                <field name="bypass_time"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                    </div>
+                </data>
+            </field>
+        </record>
+
+        <record id="tree_base_documentPage" model="ir.ui.view">
+            <field name="name">Tree Document Page : koi_document_pages</field>
+            <field name="model">document.page</field>
+            <field name="inherit_id" ref="document_page.view_wiki_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                     <field name="write_date" position="after">
+                        <field name="state"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</openerp>
