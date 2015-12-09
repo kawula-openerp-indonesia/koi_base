@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="waction_base_approvalTemplate" model="ir.actions.act_window">
+			<field name="name">Approval Template</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">base.approval_template</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<record id="wactionView_base_treeApprovalTemplate" model="ir.actions.act_window.view">
+			<field eval="10" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_base_approvalTemplate"/>
+			<field name="act_window_id" ref="waction_base_approvalTemplate"/>
+		</record>
+
+		<record id="wactionView_base_formApprovalTemplate" model="ir.actions.act_window.view">
+			<field eval="20" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_base_approvalTemplate"/>
+			<field name="act_window_id" ref="waction_base_approvalTemplate"/>
+		</record>
+
+	</data>
+</openerp>

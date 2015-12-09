@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>							
+
+        <menuitem 
+            id="manu_base_approvalTemplateHeader" 
+            parent="base.menu_custom" 
+            name="Approval System" 
+            sequence="1" />
+
+        
+        <menuitem 
+            id="manu_base_approvalTemplate" 
+            parent="manu_base_approvalTemplateHeader" 
+            name="Approval Template" 
+            sequence="1" 
+            action="waction_base_approvalTemplate" />
+        																																											
+																																																
+	</data>
+</openerp>
