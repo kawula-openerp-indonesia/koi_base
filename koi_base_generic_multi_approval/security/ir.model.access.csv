@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+accessRight_baseApprovalAll,Approval – All,koi_base_generic_multi_approval.model_base_approval,,1,1,1,1
+accessRight_baseApprovalObjectAll,Approval Object – All,koi_base_generic_multi_approval.model_base_approval_object,,1,1,1,1
+accessRight_baseApprovalTemplateAll,Approval Template – All,koi_base_generic_multi_approval.model_base_approval_template,,1,1,1,1
+accessRight_baseApprovalTemplateDetailAll,Approval Template Detail– All,koi_base_generic_multi_approval.model_base_approval_template_detail,,1,1,1,1
