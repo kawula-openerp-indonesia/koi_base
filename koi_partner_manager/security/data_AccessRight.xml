@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<record id="ar_base_identitas.data_accessRight_baseAgama" model="ir.model.access">
+            <field name="name">base.agama - All</field>
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="0"/>
+			<field name="perm_write" eval="0"/>
+			<field name="perm_unlink" eval="0"/>
+		</record>
+
+		<record id="accessRight_base_AgamaPeopleAdmin" model="ir.model.access">
+            <field name="name">base.agama - People Admin</field>
+            <field name="group_id" ref="group_base_peopleAdmin"/>
+            <field name="model_id" ref="ar_base_identitas.model_base_agama"/>
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="1"/>
+			<field name="perm_write" eval="1"/>
+			<field name="perm_unlink" eval="1"/>
+		</record>
+
+		<record id="ar_base_identitas.data_accessRight_baseEtnis" model="ir.model.access">
+            <field name="name">base.etnis - All</field>
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="0"/>
+			<field name="perm_write" eval="0"/>
+			<field name="perm_unlink" eval="0"/>
+		</record>
+
+		<record id="accessRight_base_etnisPeopleAdmin" model="ir.model.access">
+            <field name="name">base.etnis - People Admin</field>
+            <field name="group_id" ref="group_base_peopleAdmin"/>
+            <field name="model_id" ref="ar_base_identitas.model_base_etnis"/>
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="1"/>
+			<field name="perm_write" eval="1"/>
+			<field name="perm_unlink" eval="1"/>
+		</record>
+
+		<record id="ar_base_identitas.data_accessRight_baseGolonganDarah" model="ir.model.access">
+            <field name="name">base.golongan_darah - All</field>
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="0"/>
+			<field name="perm_write" eval="0"/>
+			<field name="perm_unlink" eval="0"/>
+		</record>
+
+		<record id="accessRight_base_golonganDarahPeopleAdmin" model="ir.model.access">
+            <field name="name">base.golongan_darah - People Admin</field>
+            <field name="group_id" ref="group_base_peopleAdmin"/>
+            <field name="model_id" ref="ar_base_identitas.model_base_golongan_darah"/>
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="1"/>
+			<field name="perm_write" eval="1"/>
+			<field name="perm_unlink" eval="1"/>
+		</record>
+
+		<record id="ar_base_identitas.data_accessRight_baseJenisKelamin" model="ir.model.access">
+            <field name="name">base.jenis_kelamin - All</field>
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="0"/>
+			<field name="perm_write" eval="0"/>
+			<field name="perm_unlink" eval="0"/>
+		</record>
+
+		<record id="accessRight_base_jenisKelaminPeopleAdmin" model="ir.model.access">
+            <field name="name">base.jenis_kelamin - People Admin</field>
+            <field name="group_id" ref="group_base_peopleAdmin"/>
+            <field name="model_id" ref="ar_base_identitas.model_base_jenis_kelamin"/>
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="1"/>
+			<field name="perm_write" eval="1"/>
+			<field name="perm_unlink" eval="1"/>
+		</record>
+
+		<record id="ar_base_identitas.data_accessRight_baseStatusPekerjaan" model="ir.model.access">
+            <field name="name">base.status_pekerjaan - All</field>
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="0"/>
+			<field name="perm_write" eval="0"/>
+			<field name="perm_unlink" eval="0"/>
+		</record>
+
+		<record id="accessRight_base_StatusPekerjaanPeopleAdmin" model="ir.model.access">
+            <field name="name">base.status_pekerjaan - People Admin</field>
+            <field name="group_id" ref="group_base_peopleAdmin"/>
+            <field name="model_id" ref="ar_base_identitas.model_base_status_pekerjaan"/>
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="1"/>
+			<field name="perm_write" eval="1"/>
+			<field name="perm_unlink" eval="1"/>
+		</record>
+
+		<record id="ar_base_identitas.data_accessRight_baseStatusPernikahan" model="ir.model.access">
+            <field name="name">base.status_pernikahan - All</field>
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="0"/>
+			<field name="perm_write" eval="0"/>
+			<field name="perm_unlink" eval="0"/>
+		</record>
+
+		<record id="accessRight_base_StatusPernikahanPeopleAdmin" model="ir.model.access">
+            <field name="name">base.status_pernikahan - People Admin</field>
+            <field name="group_id" ref="group_base_peopleAdmin"/>
+            <field name="model_id" ref="ar_base_identitas.model_base_status_pernikahan"/>
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="1"/>
+			<field name="perm_write" eval="1"/>
+			<field name="perm_unlink" eval="1"/>
+		</record>
+
+		<record id="base.access_res_country_group_user" model="ir.model.access">
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="0"/>
+			<field name="perm_write" eval="0"/>
+			<field name="perm_unlink" eval="0"/>
+		</record>
+
+		<record id="base.access_res_country_state_group_user" model="ir.model.access">
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="0"/>
+			<field name="perm_write" eval="0"/>
+			<field name="perm_unlink" eval="0"/>
+		</record>
+
+		<record id="accessRight_base_stateGeographyAdmin" model="ir.model.access">
+            <field name="name">res.country.state - Geography Admin</field>
+            <field name="group_id" ref="group_base_geographyAdmin"/>
+            <field name="model_id" ref="base.model_res_country_state"/>
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="1"/>
+			<field name="perm_write" eval="1"/>
+			<field name="perm_unlink" eval="1"/>
+		</record>
+
+		<record id="accessRight_base_countryGeographyAdmin" model="ir.model.access">
+            <field name="name">res.country - Geography Admin</field>
+            <field name="group_id" ref="group_base_geographyAdmin"/>
+            <field name="model_id" ref="base.model_res_country"/>
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="1"/>
+			<field name="perm_write" eval="1"/>
+			<field name="perm_unlink" eval="1"/>
+		</record>
+
+		<record id="base.access_res_partner_bank_group_partner_manager" model="ir.model.access">
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="0"/>
+			<field name="perm_write" eval="0"/>
+			<field name="perm_unlink" eval="0"/>
+		</record>
+
+		<record id="accessRight_base_bankPartnerBankAccountAdmin" model="ir.model.access">
+            <field name="name">res.partner.bank - Bank Account Admin</field>
+            <field name="group_id" ref="group_base_bankAccountAdmin"/>
+            <field name="model_id" ref="base.model_res_partner_bank"/>
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="1"/>
+			<field name="perm_write" eval="1"/>
+			<field name="perm_unlink" eval="1"/>
+		</record>
+
+		<record id="base.access_res_bank_group_partner_manager" model="ir.model.access">
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="0"/>
+			<field name="perm_write" eval="0"/>
+			<field name="perm_unlink" eval="0"/>
+		</record>
+
+		<record id="accessRight_base_bankBankAccountAdmin" model="ir.model.access">
+            <field name="name">res.bank - Bank Account Admin</field>
+            <field name="group_id" ref="group_base_bankAccountAdmin"/>
+            <field name="model_id" ref="base.model_res_bank"/>
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="1"/>
+			<field name="perm_write" eval="1"/>
+			<field name="perm_unlink" eval="1"/>
+		</record>
+
+		<record id="base.access_res_partner_bank_type_group_partner_manager" model="ir.model.access">
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="0"/>
+			<field name="perm_write" eval="0"/>
+			<field name="perm_unlink" eval="0"/>
+		</record>
+
+		<record id="accessRight_base_bankPartnerTypeBankAccountAdmin" model="ir.model.access">
+            <field name="name">res.partner.bank.type - Bank Account Admin</field>
+            <field name="group_id" ref="group_base_bankAccountAdmin"/>
+            <field name="model_id" ref="base.model_res_partner_bank_type"/>
+			<field name="perm_read" eval="1"/>
+			<field name="perm_create" eval="1"/>
+			<field name="perm_write" eval="1"/>
+			<field name="perm_unlink" eval="1"/>
+		</record>
+	</data>
+</openerp>

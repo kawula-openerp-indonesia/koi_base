@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>  
+
+        <record id="form_base_wizardTagPartner" model="ir.ui.view">
+            <field name="name">Form Wizard Tag Partner</field>
+            <field name="model">base.wizard_tag_partner</field>
+            <field name="arch" type="xml">
+                <form string="Tag Partner" version="7.0">
+                    <sheet>
+                    <field name="detail_ids" colspan="4" nolabel="1" mode="tree" readonly="0">
+                        <tree string="Tags" editable="bottom" delete="false" create="false">
+                            <field name="category_id" readonly="1"/>
+                            <field name="tag"/>            
+                        </tree>
+                    </field>
+                    </sheet>
+                    <footer>
+                        <button name="button_tag" string="Ok" type="object" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="_Cancel" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <record id="waction_base_wizardTagPartner" model="ir.actions.act_window">
+            <field name="name">Tag Partner</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">base.wizard_tag_partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="form_base_wizardTagPartner"/>
+            <field name="target">new</field>
+        </record>          
+
+        
+    </data>
+</openerp>
