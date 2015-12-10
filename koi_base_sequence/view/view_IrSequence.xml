@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+         <record id="form_base_IrSequence" model="ir.ui.view">
+         	<field name="name">Form Inherit Sequence</field>
+            <field name="model">ir.sequence</field>
+            <field name="inherit_id" ref="base.sequence_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <sheet position="before">
+                        <button string="Create Monthly Config Sequence" name="%(waction_base_wizardSequenceConfigurationPeriod)d" type="action" class="oe_highlight"/>
+                    </sheet>
+					<notebook position="inside">
+						<page string="Sequence Structure">
+                			<field name="base_sequence_configuration_ids" nolabel="1" colspan="4" mode="tree">
+                				<tree string="Sequence Structure" editable="bottom">
+                					<field name="sequence_id" string="Sequence" options="{'create' : false, 'create_edit' : false, 'm2o_dialog' : false, 'no_open' : true}"/>
+                					<field name="start_date" string="Start Date"/>
+                					<field name="end_date" string="End Date"/>
+                					<field name="related_prefix" string="Prefix"/>
+                					<field name="related_suffix" string="Suffix"/>
+                					<field name="related_number_next" string="Number Next"/>
+                					<field name="related_number_increment" string="Number Increment"/>
+                					<field name="related_padding" string="Padding"/>
+                					<field name="related_implementation" string="Implementation"/>
+                				</tree>             				
+                			</field>
+						</page>
+					</notebook>
+                    <xpath expr="//group[@string='Legend (for prefix, suffix)']/group[1]" position="inside">
+                        <label colspan="2" string="Romawi: %%(rom)s"/>
+                    </xpath>
+                    
+				</data>
+            </field>
+        </record>
+    </data>
+</openerp>
+
