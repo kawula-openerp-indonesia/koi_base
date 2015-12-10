@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>							
+
+        <menuitem 
+            id="manu_base_partnerDirectoryRoot" 
+            name="Partners Directory" 
+            sequence="11" />
+
+        <menuitem 
+            id="manu_base_partner" 
+            name="Partners"
+            parent="manu_base_partnerDirectoryRoot"
+            sequence="1"/>
+
+        <menuitem 
+            id="manu_base_corporatePartner" 
+            name="Corporate Partners"
+            parent="manu_base_partner"
+            action="waction_base_corporatePartner"
+            sequence="1"
+            groups="koi_partner_manager.group_base_corporatePartnerAdmin"
+            />
+        																																											
+        <menuitem 
+            id="manu_base_individualPartner" 
+            name="Individual Partners"
+            parent="manu_base_partner"
+            action="waction_base_individualPartner"
+            sequence="2"
+            groups="koi_partner_manager.group_base_individualPartnerAdmin"
+            />
+
+        <menuitem 
+            id="manu_base_allContacts" 
+            name="All Contacts"
+            parent="manu_base_partner"
+            action="waction_base_allContacts"
+            sequence="3"
+            groups="koi_partner_manager.group_base_allContactsAdmin"
+            />
+
+        <menuitem 
+            id="manu_base_partnerDirectoryConfiguration" 
+            name="Configuration"
+            parent="manu_base_partnerDirectoryRoot"
+            sequence="99"/>
+
+
+        <menuitem 
+            id="manu_base_partnerTags" 
+            name="Partner Tags"
+            parent="manu_base_partnerDirectoryConfiguration"
+            action="base.action_partner_category_form"
+            sequence="1"
+            groups="koi_partner_manager.group_base_partnerTagsAdmin"
+            />
+
+        <menuitem 
+            id="manu_base_geography" 
+            name="Geography"
+            parent="manu_base_partnerDirectoryConfiguration"
+            sequence="2"
+            groups="koi_partner_manager.group_base_geographyAdmin"
+            />
+
+        <menuitem 
+            id="manu_base_country" 
+            name="Country"
+            parent="manu_base_geography"
+            action="base.action_country"
+            sequence="1"/>
+
+        <menuitem 
+            id="manu_base_state" 
+            name="State"
+            parent="manu_base_geography"
+            action="base.action_country_state"
+            sequence="2"/>
+										
+        <menuitem 
+            id="manu_base_bankAccountRoot" 
+            name="Bank Account"
+            parent="manu_base_partnerDirectoryConfiguration"
+            sequence="3"
+            groups="koi_partner_manager.group_base_bankAccountAdmin"
+            />
+										
+        <menuitem 
+            id="manu_base_bank" 
+            name="Bank"
+            parent="manu_base_bankAccountRoot"
+            action="base.action_res_bank_form"
+            sequence="1"/>
+
+        <menuitem 
+            id="manu_base_bankAccountType" 
+            name="Bank Account Type"
+            parent="manu_base_bankAccountRoot"
+            action="base.action_res_partner_bank_type_form"
+            sequence="2"/>
+										
+        <menuitem 
+            id="manu_base_bankAccount" 
+            name="Bank Account"
+            parent="manu_base_bankAccountRoot"
+            action="base.action_res_partner_bank_account_form"
+            sequence="3"/>																		
+
+        <menuitem 
+            id="manu_base_corporateConfiguration" 
+            name="Corporate"
+            parent="manu_base_partnerDirectoryConfiguration"
+            groups="koi_base_admin_tools.group_base_hiddenMenu"
+            sequence="4"/>
+
+
+        <menuitem 
+            id="manu_base_corporateType" 
+            name="Corporate Type"
+            parent="manu_base_corporateConfiguration"
+            action="base.action_country"
+            sequence="1"/>	
+
+        <menuitem 
+            id="manu_base_typeOfIndustry" 
+            name="Type Of Industri"
+            parent="manu_base_corporateConfiguration"
+            action="base.action_country"
+            sequence="2"/>	
+
+        <menuitem 
+            id="manu_base_peopleConfiguration" 
+            name="People"
+            parent="manu_base_partnerDirectoryConfiguration"
+            sequence="5"
+            groups="koi_partner_manager.group_base_peopleAdmin"
+            />
+
+        <menuitem 
+            id="manu_base_religion" 
+            name="Religions"
+            parent="manu_base_peopleConfiguration"
+            action="ar_base_identitas.waction_base_agama"
+            sequence="1"/>																		
+
+        <menuitem 
+            id="manu_base_ethnic" 
+            name="Ethnics"
+            parent="manu_base_peopleConfiguration"
+            action="ar_base_identitas.waction_base_etnis"
+            sequence="2"/>
+
+        <menuitem 
+            id="manu_base_gender" 
+            name="Gender"
+            parent="manu_base_peopleConfiguration"
+            action="ar_base_identitas.waction_base_jenisKelamin"
+            sequence="3"/>
+
+        <menuitem 
+            id="manu_base_maritalStatus" 
+            name="Marital Status"
+            parent="manu_base_peopleConfiguration"
+            action="ar_base_identitas.waction_base_statusPernikahan"
+            sequence="4"/>
+
+        <menuitem 
+            id="manu_base_bloodType" 
+            name="Blood Type"
+            parent="manu_base_peopleConfiguration"
+            action="ar_base_identitas.waction_base_golonganDarah"
+            sequence="5"/>		
+
+        <menuitem 
+            id="manu_base_familyRelationshipType" 
+            name="Family Relationship Type"
+            parent="manu_base_peopleConfiguration"
+            action="koi_base_people.waction_base_familyRelationshipType"
+            sequence="6"/>																																																						
+																	
+	</data>
+</openerp>

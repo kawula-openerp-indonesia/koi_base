@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="application_base_menuAccess" model="ir.module.category">
+			<field name="name">Partner Directory - Master Data Administrator</field>
+		</record>	
+
+        <!-- Corporate Partner -->
+		<record id="group_base_corporatePartnerAdmin" model="res.groups">
+			<field name="name">Corporate Partner</field>
+			<field name="category_id" ref="application_base_menuAccess"/>
+		</record>
+
+        <record model="res.users" id="base.user_root">
+            <field eval="[(4,ref('group_base_corporatePartnerAdmin'))]" name="groups_id"/>
+        </record>
+        
+        <!-- Individual Partner -->
+		<record id="group_base_individualPartnerAdmin" model="res.groups">
+			<field name="name">Individual Partner</field>
+			<field name="category_id" ref="application_base_menuAccess"/>
+		</record>
+
+        <record model="res.users" id="base.user_root">
+            <field eval="[(4,ref('group_base_individualPartnerAdmin'))]" name="groups_id"/>
+        </record>
+        
+        <!-- All Contacts -->
+		<record id="group_base_allContactsAdmin" model="res.groups">
+			<field name="name">All Contacts</field>
+			<field name="category_id" ref="application_base_menuAccess"/>
+		</record>
+
+        <record model="res.users" id="base.user_root">
+            <field eval="[(4,ref('group_base_allContactsAdmin'))]" name="groups_id"/>
+        </record>
+        
+        <!-- Partner Tags -->
+		<record id="group_base_partnerTagsAdmin" model="res.groups">
+			<field name="name">Partner Tags</field>
+			<field name="category_id" ref="application_base_menuAccess"/>
+		</record>
+
+        <record model="res.users" id="base.user_root">
+            <field eval="[(4,ref('group_base_partnerTagsAdmin'))]" name="groups_id"/>
+        </record>
+        
+        <!-- Geography -->
+		<record id="group_base_geographyAdmin" model="res.groups">
+			<field name="name">Geography</field>
+			<field name="category_id" ref="application_base_menuAccess"/>
+		</record>
+
+        <record model="res.users" id="base.user_root">
+            <field eval="[(4,ref('group_base_geographyAdmin'))]" name="groups_id"/>
+        </record>
+        
+        <!-- Bank Account -->
+		<record id="group_base_bankAccountAdmin" model="res.groups">
+			<field name="name">Bank Account</field>
+			<field name="category_id" ref="application_base_menuAccess"/>
+		</record>
+
+        <record model="res.users" id="base.user_root">
+            <field eval="[(4,ref('group_base_bankAccountAdmin'))]" name="groups_id"/>
+        </record>
+        
+        <!-- People -->
+		<record id="group_base_peopleAdmin" model="res.groups">
+			<field name="name">People</field>
+			<field name="category_id" ref="application_base_menuAccess"/>
+		</record>
+
+        <record model="res.users" id="base.user_root">
+            <field eval="[(4,ref('group_base_peopleAdmin'))]" name="groups_id"/>
+        </record>
+	
+	</data>
+</openerp>

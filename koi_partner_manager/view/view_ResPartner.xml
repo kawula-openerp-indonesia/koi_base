@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+         <record id="form_base_partnerDirectory" model="ir.ui.view">
+         	<field name="name">Form Partner - Partner Directory</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <sheet position="before">
+                        <header>
+                            <button name="button_set_customer" type="object" attrs="{'invisible':[('customer','=',True)]}" string="Set as customer" groups="koi_partner_manager.group_base_tagCustomer"/>
+                            <button name="button_unset_customer" type="object" attrs="{'invisible':[('customer','=',False)]}" string="Not a customer" groups="koi_partner_manager.group_base_tagCustomer"/>
+                            <button name="button_set_supplier" type="object" attrs="{'invisible':[('supplier','=',True)]}" string="Set as supplier" groups="koi_partner_manager.group_base_tagSupplier"/>
+                            <button name="button_unset_supplier" type="object" attrs="{'invisible':[('supplier','=',False)]}" string="Not a supplier" groups="koi_partner_manager.group_base_tagSupplier"/>
+                            <button name="%(waction_base_wizardTagPartner)d" type="action" string="Tag Partner" groups="koi_partner_manager.group_base_partnerTag"/>
+
+                        </header>
+                    </sheet>
+
+                    <xpath expr="/form/sheet/div/field[@name='category_id']" position="attributes">
+                        <attribute name="readonly">1</attribute>
+                    </xpath>
+
+                    <xpath expr="/form/sheet/group/group/field[@name='mobile']" position="attributes">
+                        <attribute name="invisible">context.get('default_is_company',False)</attribute>
+                    </xpath>
+
+                    <xpath expr="//page[@name='page_history']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+
+					<page string="Internal Notes" position="before">
+                        <page string="Employee" attrs="{'invisible':[('is_company','=',False)]}">
+                            <field name="employee_address_ids" colspan="4" nolabel="1" 
+                                readonly="1"
+                                context="{'default_parent_id' : active_id, 'default_type' : 'contact', 'default_employee' : 1}">
+                                <tree string="Employee">
+                                    <field name="name" string="Employee Name"/>
+                                    <field name="function" string="Position"/>
+                                    <field name="type" invisible="1"/>
+                                    <field name="parent_id" invisible="1"/>
+                                    <field name="customer" invisible="1"/>
+                                    <field name="supplier" invisible="1"/>
+                                    <field name="employee" invisible="1"/>
+                                    <field name="mobile"/>
+                                    <field name="phone"/>
+                                    <field name="fax"/>
+                                    <field name="email"/>
+                                </tree>
+                                <form string="Employee" version="7.0">
+                                    <sheet string="Employee">
+                                        <field name="image" widget="image" class="oe_left oe_avatar" options="{'preview_image' : 'image_medium', 'size' : [90,90]}"/>
+                                        <div class="oe_title">
+                                            <h1>
+                                                <field name="name" default_focus="1"/>
+                                            </h1>
+                                            <field name="category_id" widget="many2many_tags" placeholder="Tags..." readonly="1"/>
+                                        </div>
+                                        <div class="oe_right oe_button_box" name="buttons"/>
+
+                                        <group name="group_2">
+                                            <group name="group_2_1">
+                                                <label for="sreet" string="Address"/>
+                                                <div>
+                                                    <field name="street" placeholder="Street"/>
+                                                    <field name="street2"/>
+                                                    <div class="address_format">
+                                                        <field name="city" placeholder="City" style="width:40%%"/>
+                                                        <field name="state_id" class="oe_no_button" placeholder="State" style="width:37%%" options='{"no_open" : True}' on_change="onchange_state(state_id)"/>
+                                                        <field name="zip" placeholder="ZIP" style="width:20%%"/>
+                                                    </div>
+                                                    <field name="country_id" placeholder="Country" class="oe_no_button" options="{'no_open' : True}"/>
+                                                </div>
+                                            </group>
+                                            <group name="group_2_2">
+                                                <field name="function"/>
+                                                <field name="phone"/>
+                                                <field name="mobile"/>
+                                                <field name="fax"/>
+                                                <field name="email"/>
+                                            </group>
+                                        </group>
+                                        <notebook colspan="4">
+                                            <page string="Internal Notes">
+                                                <field name="comment" colspan="4" nolabel="1"/>
+                                            </page>
+                                            <page string="Administrator Only" invisible="1">
+                                                <group name="group_1" colspan="4" col="4">
+                                                    <field name="customer"/>
+                                                    <field name="supplier"/>
+                                                    <field name="employee"/>
+                                                    <field name="is_company"/>
+                                                    <field name="parent_id"/>
+                                                </group>
+                                                <!-- <field name="property_account_receivable"/> -->
+                                                <!-- <field name="property_account_payable"/> -->
+                                            </page>
+                                        </notebook>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Address" invisible="1">
+                            <label for="invoice_address_ids"/>
+                            <field name="invoice_address_ids" colspan="4" nolabel="1" context="{'default_parent_id' : active_id, 'default_type' : 'invoice'}">
+                                <tree string="Invoice Address">
+                                    <field name="name"/>
+                                    <field name="type" invisible="1"/>
+                                    <field name="parent_id" invisible="1"/>
+                                    <field name="street"/>
+                                    <field name="street2"/>
+                                    <field name="city"/>
+                                    <field name="state_id"/>
+                                    <field name="country_id"/>
+                                    <field name="phone"/>
+                                    <field name="fax"/>
+                                    <field name="email"/>
+                                    <field name="customer" invisible="1"/>
+                                    <field name="supplier" invisible="1"/>
+                                </tree>
+                            </field>
+                            <label for="shipping_address_ids"/>
+                            <field name="shipping_address_ids" colspan="4" nolabel="1" context="{'default_parent_id' : active_id, 'default_type' : 'shipping'}">
+                                <tree string="Shipping Address">
+                                    <field name="name"/>
+                                    <field name="type" invisible="1"/>
+                                    <field name="parent_id" invisible="1"/>
+                                    <field name="street"/>
+                                    <field name="street2"/>
+                                    <field name="city"/>
+                                    <field name="state_id"/>
+                                    <field name="country_id"/>
+                                    <field name="phone"/>
+                                    <field name="fax"/>
+                                    <field name="email"/>
+                                    <field name="customer" invisible="1"/>
+                                    <field name="supplier" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+					</page>
+
+                    <xpath expr="//page[@string='Contacts']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                        <attribute name="attrs"/>
+                    </xpath>
+
+                    <!-- make customer field invisible. Field value controlled by button on header -->
+                    <xpath expr="//notebook/page[@string='Sales &amp; Purchases']/group[1]/group[2]/field[@name='customer']" position="attributes">
+                        <attribute name="invisible">0</attribute>
+                        <attribute name="readonly">1</attribute>
+                    </xpath>
+
+                    <!-- make supplier field invisible. Field value controlled by button on header -->
+                    <xpath expr="//notebook/page[@string='Sales &amp; Purchases']/group[1]/group[2]/field[@name='supplier']" position="attributes">
+                        <attribute name="invisible">0</attribute>
+                        <attribute name="readonly">1</attribute>
+                    </xpath>
+
+                    <!-- setting parent is not allowed anymore -->
+                    <xpath expr="//sheet/div[@class='oe_title']/field[@name='parent_id']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+
+                    <!-- setting is_company is not allowed anymore. Field value controlled by context on window action -->
+                    <xpath expr="//sheet/div[@class='oe_title']/div[@class='oe_edit_only']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+				</data>
+            </field>
+        </record>
+
+        <record id="tree_base_partnerDirectory001" model="ir.ui.view">
+            <field name="name">tree - res.partner - koi_partner_directory - 001</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='phone']" position="before">
+                    <field name="mobile" invisible="context.get('default_is_company', False)"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- SEARCH VIEW -->
+         <record id="search_base_partnerDirectory" model="ir.ui.view">
+         	<field name="name">Form Partner - Partner Directory</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <search string="Partner">
+                    <field name="name"/>
+                    <field name="state_id"/>
+                    <field name="country_id"/>
+                    <group name="group_1" string="Customer/Supplier">
+                        <filter name="filter_customer" string="Customer" domain="[('customer','=',1)]"/>
+                        <filter name="filter_supplier" string="Supplier" domain="[('supplier','=',1)]"/>
+                        <filter name="filter_none" string="Not a customer/supplier" domain="[('supplier','=',0),('customer','=',0)]"/>
+                    </group>
+
+                    <group name="group_2" string="Category">
+
+                    </group>
+                </search>
+
+
+            </field>
+        </record>
+    </data>
+</openerp>
+
