@@ -165,7 +165,6 @@ class wizard_create_base_sequence_configuration_period(osv.osv_memory):
         'prefix': get_default_prefix,
         'suffix': get_default_suffix,
         'implementation': get_default_implementation,
-        'number_increment': get_default_number_increment,
         'padding': get_default_padding,
         'year': get_default_year,
         'start_month': 1,
