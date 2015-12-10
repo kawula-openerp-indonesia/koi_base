@@ -18,32 +18,21 @@
 #
 ##############################################################################
 {
-    'name': 'KOI Base - Partner Manager',
+    'name': 'KOI - Base Sequence Module',
     'version': '1.1',
     'category': 'Base',
     'author': 'Kawula OpenERP Indonesia,Andhitia Rama,Michael Viriyananda',
-    'website': 'https://github.com/kawula-openerp-indonesia',
-    'summary': 'Centralized partner management',
+    'summary': 'Initial important addition',
     'description': """
-    Partner's directory
+        This module represent another function of
+        standard sequence from OpenERP Basic Module.
+        The customize is create a sequence by lenght of period.
     """,
-    'depends': [
-        'ar_base_identitas',
-        'koi_base_admin_tools',
-        'contacts'
-    ],
+    'depends': ['base'],
     'data': [
-        'security/data_Groups.xml',
-        'security/data_GroupsMenuAccess.xml',
-        'security/data_AccessRight.xml',
-        'wizard/wizard_tag_partner.xml',
-        'view/view_ResPartner.xml',
-        'view/view_ResPartnerCategory.xml',
-        'window_action/waction_CorporatePartner.xml',
-        'window_action/waction_IndividualPartner.xml',
-        'window_action/waction_AllContacts.xml',
-        'menu/menu_PartnersDirectory.xml',
-        'menu/menu_Messaging.xml'
+        'security/ir.model.access.csv',
+        'wizard/wizard_create_base_sequence_configuration.xml',
+        'view/view_IrSequence.xml'
     ],
     'installable': True,
     'images': [],

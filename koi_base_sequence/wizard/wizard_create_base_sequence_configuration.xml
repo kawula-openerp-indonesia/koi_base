@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>  
+
+        <record id="form_base_wizardSequenceConfigurationPeriod" model="ir.ui.view">
+            <field name="name">Create Base Sequence Configuration Period</field>
+            <field name="model">base.sequence_configuration_period</field>
+            <field name="arch" type="xml">
+                <form string="Create Configuration" version="7.0">
+                    <group col="4">
+                        <field name="name" required="True"/>
+                        <field name="year" required="True"/>
+                        <field name="start_month" required="True"/>
+                        <field name="end_month" required="True"/>
+                    </group>
+                    <group col="4">
+                        <field name="prefix" placeholder="Prefix" style="width: 60%%"/>
+                        <field name="suffix" placeholder="Suffix" style="width: 60%%"/>
+                        <field name="padding" required="True"/>
+                        <field name="number_increment" required="True" style="width: 40%%"/>
+                        <field name="implementation" required="True" style="width: 60%%"/>
+                    </group>
+                    <group col="4" string="Legend (for prefix, suffix)">
+                            <label colspan="2" string="Auto Month(1 digits)(eg: 1,2,3...12) : %%(auto-m)s"/>
+                            <label colspan="2" string="Auto Month(Romawi)(eg: I,II,III...XII) : %%(auto-m-r)s"/>
+                            <label colspan="2" string="Auto Month(String)(eg: January,February...December) : %%(auto-m-M)s"/>
+                            <label colspan="2" string="Auto Month(2 digits)(eg: 01,02,03...12): %%(auto-m-2d)s"/>
+                            <label colspan="2" string="Auto Month(String)(eg: Jan,Feb...Dec) : %%(auto-m-SM)s"/>
+                    </group>
+                    <footer>
+                        <button name="create_base_sequence_period" string="Create" type="object" class="oe_highlight"/>
+                        Or
+                        <button special="cancel" string="_Cancel" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <record id="waction_base_wizardSequenceConfigurationPeriod" model="ir.actions.act_window">
+            <field name="name">Create Base Sequence Configuration Period</field>
+            <field name="res_model">base.sequence_configuration_period</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="form_base_wizardSequenceConfigurationPeriod"/>
+            <field name="target">new</field>
+        </record>          
+        
+    </data>
+</openerp>
