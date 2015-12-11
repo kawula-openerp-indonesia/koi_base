@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>							
+
+            
+
+
+		<menuitem 	
+					id="menu_base_unusedMenuHeader"
+					name="Unused Menu"
+                    sequence="99"
+                    groups="base.group_erp_manager"
+		/>
+																																													
+																																																
+	</data>
+</openerp>

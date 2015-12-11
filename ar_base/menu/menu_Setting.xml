@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>							
+
+        <menuitem 
+            id="base.module_mi" 
+            parent="base.menu_management" 
+            sequence="99" 
+            action="base.modules_act_cl"/>
+        
+        <menuitem 
+            id="base.menu_module_tree" 
+            parent="base.menu_management" 
+            name="Installed Modules" 
+            sequence="1" 
+            action="base.open_module_tree" />
+        																																											
+																																																
+	</data>
+</openerp>

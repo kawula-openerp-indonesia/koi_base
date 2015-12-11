@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="form_base_wizardCancelTransaction" model="ir.ui.view">
+            <field name="name">Form Wizard Cancel Transaction</field>
+            <field name="model">base.wizard_cancel_transaction</field>
+            <field name="arch" type="xml">
+                <form string="Cancel Transaction" version="7.0">
+                	<group>
+						<field name="cancel_time"/>
+						<newline/>
+						<field name="user_cancel_id"/>
+						<newline/>
+					</group>
+					<label for="cancel_description"/>
+					<field name="cancel_description" colspan="4" nolabel="1"/>
+					<footer>
+					<button name="run_wizard" type="object" string="Ok" colspan="2" class="oe_highlight"/>
+					<button special="cancel" string="Cancel" colspan="2"/>
+					</footer>
+                </form>
+            </field>
+        </record>
+        
+        <record id="waction_base_wizardCancelTransaction" model="ir.actions.act_window">
+            <field name="name">Cancel Transaction</field>
+            <field name="res_model">base.wizard_cancel_transaction</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>        
+    </data>
+</openerp>
