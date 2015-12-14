@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="application_base_productMenuAccess" model="ir.module.category">
+			<field name="name">Product Management Application Menu Access</field>
+		</record>	
+
+		<record id="group_base_menuAllProduct" model="res.groups">
+			<field name="name">All Product</field>
+			<field name="category_id" ref="application_base_productMenuAccess"/>
+		</record>
+
+        <record model="res.users" id="base.user_root">
+            <field eval="[(4,ref('group_base_menuAllProduct'))]" name="groups_id"/>
+        </record>
+		
+		<record id="group_base_menuUOMCategory" model="res.groups">
+			<field name="name">UoM Category</field>
+			<field name="category_id" ref="application_base_productMenuAccess"/>
+		</record>
+
+        <record model="res.users" id="base.user_root">
+            <field eval="[(4,ref('group_base_menuUOMCategory'))]" name="groups_id"/>
+        </record>
+
+		<record id="group_base_menuUOM" model="res.groups">
+			<field name="name">Unit Of Measure</field>
+			<field name="category_id" ref="application_base_productMenuAccess"/>
+		</record>
+
+        <record model="res.users" id="base.user_root">
+            <field eval="[(4,ref('group_base_menuUOM'))]" name="groups_id"/>
+        </record>
+
+		<record id="group_base_menuPricelistType" model="res.groups">
+			<field name="name">Pricelist Type</field>
+			<field name="category_id" ref="application_base_productMenuAccess"/>
+		</record>
+
+        <record model="res.users" id="base.user_root">
+            <field eval="[(4,ref('group_base_menuPricelistType'))]" name="groups_id"/>
+        </record>
+
+		<record id="group_base_menuProductCategory" model="res.groups">
+			<field name="name">Product Category</field>
+			<field name="category_id" ref="application_base_productMenuAccess"/>
+		</record>
+
+        <record model="res.users" id="base.user_root">
+            <field eval="[(4,ref('group_base_menuProductCategory'))]" name="groups_id"/>
+        </record>
+
+		<record id="group_base_menuAllProduct" model="res.groups">
+			<field name="name">All Product</field>
+			<field name="category_id" ref="application_base_productMenuAccess"/>
+		</record>
+
+        <record model="res.users" id="base.user_root">
+            <field eval="[(4,ref('group_base_menuAllProduct'))]" name="groups_id"/>
+        </record>
+        
+
+	</data>
+</openerp>

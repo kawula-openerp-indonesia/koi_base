@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="search_base_pricelistType" model="ir.ui.view">
+            <field name="name">Search Pricelist Type</field>
+            <field name="model">product.pricelist.type</field>
+            <field name="arch" type="xml">
+                <search string="Pricelist Types">
+                    <field name="name"/>
+                    <field name="key"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="form_base_pricelistType" model="ir.ui.view">
+            <field name="name">Form - Pricelist Type</field>
+            <field name="model">product.pricelist.type</field>
+            <field name="arch" type="xml">
+                <form string="Pricelist Types" version="7.0">
+                    <sheet>
+                        <group name="group_1" colspan="4" col="2">
+                            <field name="name"/>
+                            <field name="key"/>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Allowed Groups">
+                                <field name="group_ids" colspan="4"/>
+                            </page>
+                            <page string="Administration">
+                                <group name="group_2" colspan="4" col="2">
+                                    <field name="parent_menu_id"
+                                        options="{'create' : false, 'create_edit' : false, 'm2o_dialog' : false, 'no_open' : true}"/>
+                                    <field name="window_action_id"
+                                        readonly="1"
+                                        options="{'create' : false, 'create_edit' : false, 'm2o_dialog' : false, 'no_open' : true}"/>
+                                    <field name="menu_id"
+                                        readonly="1"
+                                        options="{'create' : false, 'create_edit' : false, 'm2o_dialog' : false, 'no_open' : true}"/>
+                                    <button name="button_create_menu" type="object" string="Create Menu"
+                                        attrs="{'invisible' : [('menu_id','!=',False)]}"/>
+                                    <button name="button_delete_menu" type="object" string="Delete Menu"
+                                        attrs="{'invisible' : [('menu_id','=',False)]}"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="tree_base_pricelistType" model="ir.ui.view">
+            <field name="name">Tree - Pricelist Type</field>
+            <field name="model">product.pricelist.type</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <tree string="Pricelist Types">
+                    <field name="name"/>
+                    <field name="key"/>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</openerp>

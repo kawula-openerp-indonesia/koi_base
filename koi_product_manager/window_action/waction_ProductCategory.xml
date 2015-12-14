@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="waction_base_productCategory" model="ir.actions.act_window">
+			<field name="name">Product Category</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">product.category</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<record id="WactView_base_treeProductCategory" model="ir.actions.act_window.view">
+			<field eval="10" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_base_productCategory"/>
+			<field name="act_window_id" ref="waction_base_productCategory"/>
+		</record>
+
+		<record id="WactView_base_formProductCategory" model="ir.actions.act_window.view">
+			<field eval="20" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_base_productCategory"/>
+			<field name="act_window_id" ref="waction_base_productCategory"/>
+		</record>
+	</data>
+</openerp>

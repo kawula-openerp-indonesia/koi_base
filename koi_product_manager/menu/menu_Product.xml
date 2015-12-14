@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>							
+
+        <menuitem 
+            id="menu_base_productManagementRoot" 
+            name="Products" 
+            sequence="11" />
+
+        <menuitem 
+            id="menu_base_productRoot" 
+            name="Product"
+            parent="menu_base_productManagementRoot"
+            sequence="1"/>
+
+        <menuitem 
+            id="menu_base_allProduct" 
+            name="All Products"
+            parent="menu_base_productRoot"
+            action="waction_base_product"
+            groups="group_base_menuAllProduct"
+            sequence="1"/>
+
+        <menuitem 
+            id="menu_base_productManagementConfig" 
+            name="Configuration"
+            parent="menu_base_productManagementRoot"
+            sequence="99"/>
+
+        <menuitem 
+            id="menu_base_productUOMCateg" 
+            name="UoM Categories"
+            parent="menu_base_productManagementConfig"
+            action="product.product_uom_categ_form_action"
+            groups="group_base_menuUOMCategory"
+            sequence="1"/>
+  	
+        <menuitem 
+            id="menu_base_productUOM" 
+            name="Unit Of Measure"
+            parent="menu_base_productManagementConfig"
+            action="product.product_uom_form_action"
+            groups="group_base_menuUOM"
+            sequence="2"/>
+
+        <menuitem 
+            id="menu_base_productCategory" 
+            name="Product Categories"
+            parent="menu_base_productManagementConfig"
+            action="waction_base_productCategory"
+            groups="group_base_menuProductCategory"
+            sequence="3"/>
+
+        <menuitem 
+            id="menu_base_pricelistRoot" 
+            name="Pricelist"
+            parent="menu_base_productManagementConfig"
+            sequence="10"/>
+
+        <menuitem 
+            id="menu_base_pricelistType" 
+            name="Pricelist Type"
+            parent="menu_base_pricelistRoot"
+            action="waction_base_pricelistType"
+            groups="group_base_menuPricelistType"
+            sequence="1"/>
+	</data>
+</openerp>
