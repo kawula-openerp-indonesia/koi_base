@@ -20,7 +20,7 @@
 {
     'name': 'KOI Base - Generic Multi Approval Example',
     'version': '1.1',
-    'author': 'Kawula OpenERP Indonesia; Andhitia Rama & Michael Viriyananda',
+    'author': 'Kawula OpenERP Indonesia,Andhitia Rama,Michael Viriyananda',
     'category': 'Base',
     'website': 'https://github.com/kawula-openerp-indonesia',
     'summary': 'Generic multiple approval',
