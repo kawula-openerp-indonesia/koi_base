@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="search_base_product" model="ir.ui.view">
+            <field name="name">Search - Product</field>
+            <field name="model">product.product</field>
+            <field name="arch" type="xml">
+                <search string="Product">
+                   <field name="name" string="Product" filter_domain="['|',('name','ilike',self),('default_code','ilike',self)]"/>
+                   <filter string="Services" icon="terp-accessories-archiver" domain="[('type','=','service')]"/>
+                   <filter string="Consumable" name="consumable" icon="terp-accessories-archiver" domain="[('type','=','consu')]" help="Consumable products"/>
+                   <separator/>
+                   <filter string="Can be Sold" name="filter_to_sell" icon="terp-accessories-archiver-minus" domain="[('sale_ok','=',1)]"/>
+                   <field name="categ_id"/>
+                   <group expand="0" string="Context...">
+                       <field name="pricelist_id" widget="selection" context="{'pricelist': self}" filter_domain="[]" groups="product.group_sale_pricelist"/> <!-- Keep widget=selection on this field to pass numeric `self` value, which is not the case for regular m2o widgets! -->
+                       <field name="company_id" groups="base.group_multi_company"/>
+                   </group>
+                   <group  expand='0' string='Group by...'>
+                       <filter string='Category' icon="terp-stock_symbol-selection" domain="[]" context="{'group_by' : 'categ_id'}"/>
+                       <filter string='Default Unit of Measure' icon="terp-mrp" domain="[]" context="{'group_by' : 'uom_id'}"/>
+                       <filter string='Type' icon="terp-stock_symbol-selection" domain="[]" context="{'group_by' : 'type'}"/>
+                       <filter string='Company' icon="terp-go-home" domain="[]" context="{'group_by' : 'company_id'}" groups="base.group_multi_company"/>
+                   </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="tree_base_product" model="ir.ui.view">
+            <field name="name">Tree - Product</field>
+            <field name="model">product.product</field>
+            <field eval="7" name="priority"/>
+            <field name="arch" type="xml">
+                <tree colors="red:virtual_available&lt;0;blue:virtual_available&gt;=0 and state in ('draft', 'end', 'obsolete');black:virtual_available&gt;=0 and state not in ('draft', 'end', 'obsolete')" string="Products">
+                    <field name="default_code"/>
+                    <field name="name"/>
+                    <field name="categ_id" invisible="context.get('default_categ_id',False)"/>
+                    <field name="type" invisible="0"/>
+                    <field name="variants" invisible="1"/>
+                    <field name="uom_id" string="UoM"/>
+                    <field name="uom_po_id" string="Purchase UoM"/>
+                    <field name="qty_available" invisible="1"/>
+                    <field name="virtual_available" invisible="1"/>
+                    <field name="lst_price"/>
+                    <field name="price" invisible="not context.get('pricelist',False)"/>
+                    <field name="standard_price" invisible="0"/>
+                    <field name="state"/>
+                    <field name="company_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="form_base_product" model="ir.ui.view">
+            <field name="name">Form - Product</field>
+            <field name="model">product.product</field>
+            <field eval="7" name="priority"/>
+            <field name="arch" type="xml">
+                <form string="Product" version="7.0">
+                    <header>
+                        <button name="button_generate_code" 
+                            type="object" 
+                            string="Generate Code" 
+                            colspan="2" groups="koi_product_manager.group_base_buttonGenerateCode"/>
+                    </header>
+                    <sheet>
+                        <field name="image_medium" widget="image" class="oe_avatar oe_left"/>
+                        <div class="oe_title">
+                            <div class="oe_edit_only">
+                                <label for="name" string="Product Name"/>
+                            </div>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                            <label for="categ_id" 
+                                invisible="context.get('default_categ_id',False)"
+                                class="oe_edit_only"/>
+                            <h2>
+                                <field name="categ_id"
+                                    invisible="context.get('default_categ_id',False)"
+                                    domain="[('type','=','normal')]"
+                                    options="{'create' : false, 'create_edit' : false, 'm2o_dialog' : false, 'no_open' : true}"/>
+                            </h2>
+                            <div name="options">
+                                <field name="sale_ok"/>
+                                <label for="sale_ok"/>
+                            </div>
+                        </div>
+                        <div class="oe_right oe_button_box" name="buttons">
+                        </div>
+                        <notebook>
+                            <page string="Information">
+                                <group name="group_1" colspan="4" col="2">
+                                    <group name="group_1_1" colspan="1" col="2">
+                                        <field name="type"/>
+                                        <field name="uom_id" 
+                                            on_change="onchange_uom(uom_id,uom_po_id)" 
+                                            options="{'create' : false, 'create_edit' : false, 'm2o_dialog' : false, 'no_open' : true}"/>
+                                        <field name="list_price"/>
+                                    </group>
+                                    <group name="group_1_2" colspan="1" col="2">
+                                        <field name="default_code"/>
+                                        <label for="ean13"/>
+                                        <div name="ean">
+                                            <field name="ean13" placeholder="e.g. 5901234123457"/>
+                                        </div>
+                                    </group>
+                                    <group name="group_1_3" colspan="1" col="2" invisible="1">
+                                        <field name="variants"/>
+                                        <field name="price_margin"/>
+                                        <field name="price_extra"/>
+                                    </group>
+                                </group>
+                                <field name="description" placeholder="describe the product characteristics..."/>
+                            </page>
+                            <page string="Procurements">
+                                <group name="group_2" colspan="4" col="2">
+                                    <group name="group_2_1" colspan="1" col="2">
+                                        <field name="cost_method"/>
+                                        <field name="standard_price" attrs="{'readonly':[('cost_method','=','average')]}"/>
+                                    </group>
+                                    <group name="group_2_2" colspan="1" col="2">
+                                        <field name="uom_po_id"
+                                            options="{'create' : false, 'create_edit' : false, 'm2o_dialog' : false, 'no_open' : true}"/>
+                                    </group>
+                                </group>
+                                <separator string="Description for Suppliers"/>
+                                <field name="description_purchase" placeholder="This note will be displayed on requests for quotation..."/>
+                            </page>
+                            <page string="Inventory">
+                                <group name="group_3" colspan="4" col="2">
+                                    <group name="group_3_1" colspan="1" col="2" string="State">
+                                        <field name="state"/>
+                                        <field name="product_manager"
+                                            options="{'create' : false, 'create_edit' : false, 'm2o_dialog' : false, 'no_open' : true}"/>
+                                    </group>
+                                    <group name="group_3_2" string="Weights"
+                                        attrs="{'invisible':[('type','=','service')]}">
+                                        <field digits="(14, 3)" name="volume"/>
+                                        <field name="weight"/>
+                                        <field name="weight_net"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Sales" attrs="{'invisible':[('sale_ok','=',False)]}">
+                                <group name="group_4" colspan="4" col="2">
+                                    <group name="group_4_1" colspan="1" col="2">
+                                        <label for="warranty"/>
+                                        <div>
+                                            <field name="warranty" class="oe_inline"/> months
+                                        </div>
+                                    </group>
+                                    <group name="group_4_2" colspan="1" col="2" string="Unit of Measure">
+                                        <field name="uos_id"
+                                            options="{'create' : false, 'create_edit' : false, 'm2o_dialog' : false, 'no_open' : true}"/>
+                                        <field name="uos_coeff"/>
+                                        <field name="mes_type"/>
+                                    </group>
+                                </group>
+                                <field name="packaging" groups="product.group_stock_packaging">
+                                    <form string="Packaging" version="7.0">
+                                        <group col="4">
+                                            <field name="ean"/>
+                                            <field name="sequence" invisible="1"/>
+                                            <newline/>
+                                            <field name="qty"/>
+                                            <field name="ul"/>
+                                            <field name="weight_ul"/>
+                                            <separator colspan="4" string="Palletization"/>
+                                            <field name="ul_qty"/>
+                                            <field name="rows"/>
+                                            <field name="weight"/>
+                                            <separator colspan="4" string="Pallet Dimension"/>
+                                            <field name="height"/>
+                                            <field name="width"/>
+                                            <field name="length"/>
+                                        </group>
+                                        <separator colspan="4" string="Description"/>
+                                        <field name="name"/>
+                                    </form>
+                                </field>
+                                <separator string="Description for Quotations"/>
+                                <field name="description_sale" placeholder="note to be displayed on quotations..."/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- Product Kanban View  -->
+
+        <record model="ir.ui.view" id="kanban_base_product">
+            <field name="name">Product Kanban</field>
+            <field name="model">product.product</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="color"/>
+                    <field name="type"/>
+                    <field name="list_price"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_vignette oe_semantic_html_override">
+                                <a type="open"><img t-att-src="kanban_image('product.product', 'image_small', record.id.value)" class="oe_kanban_image"/></a>
+                                <div class="oe_kanban_details">
+                                    <h4>
+                                        <a type="open">
+                                             <t t-if="record.code.raw_value">[<field name="code"/>]</t> <field name="name"/>
+                                        </a>
+                                    </h4>
+                                    <div name="tags"/>
+                                    <ul>
+                                        <li>Price: <field name="lst_price"></field></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+    </data>
+</openerp>

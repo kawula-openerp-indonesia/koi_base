@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="waction_base_product" model="ir.actions.act_window">
+			<field name="name">All Product</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">product.product</field>
+            <field name="search_view_id" ref="search_base_product"/>
+			<field name="view_type">form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+			<field name="view_mode">kanban,tree,form</field>
+		</record>
+
+		<record id="WactView_base_kanbanProduct" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence"/>
+			<field name="view_mode">kanban</field>
+			<field name="view_id" ref="kanban_base_product"/>
+			<field name="act_window_id" ref="waction_base_product"/>
+		</record>
+		
+		<record id="WactView_base_treeProduct" model="ir.actions.act_window.view">
+			<field eval="2" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_base_product"/>
+			<field name="act_window_id" ref="waction_base_product"/>
+		</record>
+
+		<record id="WactView_base_formProduct" model="ir.actions.act_window.view">
+			<field eval="3" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_base_product"/>
+			<field name="act_window_id" ref="waction_base_product"/>
+		</record>
+	</data>
+</openerp>

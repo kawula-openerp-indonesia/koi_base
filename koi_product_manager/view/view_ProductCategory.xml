@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="search_base_productCategory" model="ir.ui.view">
+            <field name="name">Search Product Category</field>
+            <field name="model">product.category</field>
+            <field name="arch" type="xml">
+                <search string="Product Categories">
+                    <field name="name" string="Product Categories"/>
+                    <field name="parent_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="form_base_productCategory" model="ir.ui.view">
+            <field name="name">Form - Product Category</field>
+            <field name="model">product.category</field>
+            <field name="arch" type="xml">
+                <form string="Product Categories" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group name="group_1" colspan="4" col="2">
+                            <field name="parent_id"
+                                attrs="{'readonly' : [('menu_id','!=',False)]}"
+                                options="{'create' : false, 'create_edit' : false, 'm2o_dialog' : false, 'no_open' : true}"/> 
+                            <field name="type"/>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Configuration">
+                                <group name="group_configuration" colspan="4" col="2">
+                                    <field name="sequence_product_id"
+                                        options="{'create' : false, 'create_edit' : false, 'm2o_dialog' : false, 'no_open' : true}"/>
+                                </group>
+                            </page>
+                            <page string="Allowed Groups">
+                                <field name="group_ids" colspan="4"/>
+                            </page>
+                            <page string="Administration">
+                                <group name="group_2" colspan="4" col="2">
+                                    <field name="parent_menu_id"
+                                        options="{'create' : false, 'create_edit' : false, 'm2o_dialog' : false, 'no_open' : true}"/> 
+                                    <field name="window_action_id"
+                                        readonly="1"
+                                        options="{'create' : false, 'create_edit' : false, 'm2o_dialog' : false, 'no_open' : true}"/> 
+                                    <field name="menu_id"
+                                        readonly="1"
+                                        options="{'create' : false, 'create_edit' : false, 'm2o_dialog' : false, 'no_open' : true}"/> 
+                                    <button name="button_create_menu" type="object" string="Create Menu"
+                                        attrs="{'invisible' : ['|','&amp;',('type','=','normal'),('menu_id','!=',False),('type','=','view')]}"/>
+                                    <button name="button_delete_menu" type="object" string="Delete Menu"
+                                        attrs="{'invisible' : [('menu_id','=',False)]}"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="tree_base_productCategory" model="ir.ui.view">
+            <field name="name">Tree - Product Category</field>
+            <field name="model">product.category</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <tree string="Product Categories">
+                    <field name="complete_name"/>
+                    <field name="parent_id"/>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</openerp>
