@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_base_approvalExample2" model="ir.ui.view">
+            <field name="name">tree Approval Example 2</field>
+            <field name="model">base.approval_example_2</field>
+            <field name="arch" type="xml">
+                <tree string="Approval Template">
+                    <field name="name"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+		<record id="form_base_approvalExample2" model="ir.ui.view">
+            <field name="name">form Approval Template</field>
+            <field name="model">base.approval_example_2</field>
+            <field name="arch" type="xml">
+                <form string="Approval Template" version="7.0">
+                    <header>
+                        <button name="workflow_action_confirm" string="Confirm" type="object" states="draft"/>
+                        <button name="workflow_action_approve" string="Approve" type="object" states="confirm"/>
+                        <button name="workflow_action_reject" string="Reject" type="object" states="confirm"/>
+                        <button name="workflow_action_bypass" string="Bypass" type="object" states="confirm"/>
+                        <button name="workflow_action_done" string="Done" type="object" states="approve"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group name="group_1">
+                            <field name="name"/>
+                            <field name="approval_template_id" on_change="approval_onchange_approval_template_id(approval_template_id)"/>
+                            <field name="active_approval_id" invisible="1"/>
+                            <field name="next_approval_id" invisible="1"/>
+                        </group>
+                        <field name="approval_ids" colspan="4" context="{'default_model' : 'base.approval_example_2'}" attrs="{'invisible':[('state','=','draft')],'readonly':[('state','!=','draft')]}">
+                            <tree string="Approval" editable="bottom">
+                                <field name="sequence" widget="handle"/>
+                                <field name="model" invisible="1"/>
+                                <field name="name"/>
+                                <field name="approval_template_detail_id"/>
+                                <field name="allowed_approve_user_ids"/>
+                                <field name="approve_user_id"/>
+                                <field name="approve_time"/>
+                                <field name="bypass"/>
+                                <field name="allowed_bypass_user_ids"/>
+                                <field name="bypass_user_id"/>
+                                <field name="bypass_time"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+    </data>
+</openerp>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="waction_base_approvalExample1" model="ir.actions.act_window">
+			<field name="name">Approval Example 1</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">base.approval_example_1</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<record id="wactionView_base_treeApprovalExample1" model="ir.actions.act_window.view">
+			<field eval="10" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_base_approvalExample1"/>
+			<field name="act_window_id" ref="waction_base_approvalExample1"/>
+		</record>
+
+		<record id="wactionView_base_formApprovalExample1" model="ir.actions.act_window.view">
+			<field eval="20" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_base_approvalExample1"/>
+			<field name="act_window_id" ref="waction_base_approvalExample1"/>
+		</record>
+
+	</data>
+</openerp>

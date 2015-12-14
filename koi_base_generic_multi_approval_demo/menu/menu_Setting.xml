@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>							
+
+        
+        <menuitem 
+            id="manu_base_approvalTemplate" 
+            parent="koi_base_generic_multi_approval.manu_base_approvalTemplateHeader" 
+            name="Approval Example 1" 
+            sequence="2" 
+            action="waction_base_approvalExample1" />
+
+        <menuitem 
+            id="manu_base_approvalTemplate2" 
+            parent="koi_base_generic_multi_approval.manu_base_approvalTemplateHeader" 
+            name="Approval Example 2" 
+            sequence="3" 
+            action="waction_base_approvalExample2" />
+        																																											
+																																																
+	</data>
+</openerp>
