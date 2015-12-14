@@ -27,7 +27,10 @@
     'description': """
     Partner's directory
     """,
-    'depends': ['ar_base'],
+    'depends': [
+        'ar_base',
+        'product'
+    ],
     'data': [
         'group/group_MenuAccess.xml',
         'group/group_ProductFlow.xml',
