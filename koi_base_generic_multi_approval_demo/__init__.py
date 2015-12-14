@@ -19,4 +19,4 @@
 #
 ##############################################################################
 
-from . import  object_module
+from . import object_module
